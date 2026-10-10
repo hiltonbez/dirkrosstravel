@@ -1,0 +1,26 @@
+.offer-preview-width{max-width:1380px;margin:0 auto;padding-left:32px;padding-right:32px}
+.offer-preview-notice{background:#edf5f6;border-bottom:1px solid #d4e5e7;color:#31565a;font-size:12px}
+.offer-preview-notice>div{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:13px;padding-bottom:13px}
+.offer-preview-notice a{display:inline-flex;align-items:center;gap:6px;text-decoration:underline}.offer-preview-notice svg{width:15px;height:15px}
+.offer-preview{padding-top:38px;padding-bottom:55px}
+.offer-preview-heading h1{font-size:40px;line-height:1.2;margin:12px 0 24px;letter-spacing:0}
+.offer-preview-heading h1 span{font-weight:400;display:inline-block;color:#53656c;font-size:30px}
+.offer-preview-reference{display:flex;gap:25px;align-items:center;flex-wrap:wrap;color:#748087;font-size:15px;margin-bottom:24px}
+.offer-preview-rating{color:#566b72;border-left:1px solid #d9e0e3;padding-left:25px}
+.offer-preview-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,480px);gap:32px;align-items:center;padding-bottom:40px}
+.offer-preview-facts p{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:17px;line-height:1.65;margin:18px 0}
+.offer-preview-facts svg{width:23px;height:23px;flex-shrink:0}
+.offer-preview-status{background:#fff1dc;color:#74531a;font-size:11px;padding:5px 9px;border-radius:3px}
+.offer-preview-price{text-align:right;min-width:0}
+.offer-preview-price>p{margin:0 0 8px;font-size:14px}.offer-preview-price strong{display:inline-block;font-size:34px;margin-left:7px}.offer-preview-price strong span{font-size:19px;vertical-align:top}
+.offer-preview-price>span{font-size:13px;color:#66777e}
+.offer-preview-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:24px}.offer-preview-actions .button{font-size:13px;padding:13px 16px;gap:9px;min-height:48px}
+.offer-preview-value h2{font-size:27px;margin:0 0 22px}
+.offer-preview-inclusions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 42px;padding:32px;background:#f4f5f6;border-top:1px solid #e9edef;border-bottom:1px solid #e9edef}
+.offer-preview-inclusions>div{display:flex;align-items:flex-start;gap:17px;min-width:0}.offer-preview-inclusions svg{width:25px;height:25px;flex-shrink:0;margin-top:3px}.offer-preview-inclusions h3{font-size:17px;line-height:1.55;margin:0 0 8px}.offer-preview-inclusions p{font-size:13px;color:#68777f;line-height:1.65;margin:0}
+.offer-preview-extras{margin:28px 0 38px}.offer-preview-extras p{display:flex;align-items:flex-start;gap:14px;font-size:15px;line-height:1.75;margin:16px 0}.offer-preview-extras svg{width:22px;height:22px;flex-shrink:0;margin-top:3px}
+.offer-preview-gallery{border-top:1px solid #e2e8eb;padding-top:30px}.offer-preview-gallery-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px}.offer-preview-gallery h2{font-size:25px;margin:0}.offer-preview-gallery .text-link{font-size:13px}
+.offer-preview-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.offer-preview-images figure{margin:0;min-width:0}.offer-preview-images img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}.offer-preview-images figcaption{font-size:12px;margin-top:10px;color:#596d76}.offer-preview-credit{font-size:10px;color:#73838b;margin-top:18px}
+.offer-preview-terms{font-size:11px;color:#73838b;line-height:1.8;border-top:1px solid #e2e8eb;margin-top:28px;padding-top:18px}
+@media(max-width:1000px){.offer-preview-summary{grid-template-columns:1fr;gap:5px}.offer-preview-price{text-align:left}.offer-preview-actions{justify-content:flex-start}.offer-preview-inclusions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.offer-preview-width{padding-left:22px;padding-right:22px}.offer-preview{padding-top:28px}.offer-preview-notice>div{align-items:flex-start;flex-direction:column;gap:8px}.offer-preview-heading h1{font-size:30px}.offer-preview-heading h1 span{display:block;font-size:23px;margin-top:10px}.offer-preview-reference{gap:12px;font-size:12px}.offer-preview-rating{padding-left:12px}.offer-preview-facts p{font-size:15px}.offer-preview-summary{padding-bottom:32px}.offer-preview-actions{flex-direction:column;align-items:stretch}.offer-preview-actions .button{justify-content:center}.offer-preview-inclusions{grid-template-columns:1fr;padding:24px 20px;gap:25px}.offer-preview-value h2{font-size:24px}.offer-preview-images{grid-template-columns:1fr;gap:24px}.offer-preview-gallery-heading{align-items:flex-start;flex-direction:column}.offer-preview-gallery h2{font-size:23px}.offer-preview-extras p{font-size:14px}}

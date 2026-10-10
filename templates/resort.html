@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% from 'resort_media.html' import gallery, room_slide %}
+{% block document_title %}{{ research.title if research else resort.name }} Mauritius | Packages &amp; Quotes | Dirk Ross{% endblock %}
+{% block description %}{{ research.intro if research else resort.description|plain }} Compare rooms, explore facilities and request your Mauritius holiday quote from Dirk Ross.{% endblock %}
+{% block seo %}
+{% if request.args.get('quote_preview') == 'grey' %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<link rel="stylesheet" href="{{ url_for('static', filename='resort.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='rooms-preview.css') }}">
+<script src="{{ url_for('static', filename='rooms-preview.js') }}" defer></script>
+<script src="{{ url_for('static', filename='room-details.js') }}" defer></script>
+<script src="{{ url_for('static', filename='resort-media.js') }}" defer></script>
+<script src="{{ url_for('static', filename='seasonal-offers.js') }}" defer></script>
+<link rel="canonical" href="{{ url_for('public.resort_detail', slug=resort.slug, _external=True) }}">
+<meta property="og:title" content="{{ research.title if research else resort.name }} | Dirk Ross">
+<meta property="og:description" content="{{ research.intro if research else resort.description|plain }}">
+<meta property="og:url" content="{{ request.base_url }}">
+{% if research and research.image_verified %}<meta property="og:image" content="{{ resort.image_url }}">{% endif %}
+{% set breadcrumbs = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':url_for('public.home',_external=True)},{'@type':'ListItem','position':2,'name':'Mauritius resorts','item':url_for('public.resorts',_external=True)},{'@type':'ListItem','position':3,'name':resort.name,'item':request.base_url}]} %}
+<script type="application/ld+json">{{ breadcrumbs|tojson }}</script>
+{% if research %}{% set hotel = {'@context':'https://schema.org','@type':'Hotel','name':research.title,'description':research.intro,'url':request.base_url,'address':{'@type':'PostalAddress','addressLocality':research.area,'addressCountry':'MU'}} %}
+<script type="application/ld+json">{{ hotel|tojson }}</script>{% endif %}
+{% endblock %}
+{% block content %}
+<article class="resort-resource">
+  {% set verified_photos = media|selectattr('category','equalto','resort')|list %}
+  {% set photo = resort_photo(resort) %}
+  <header class="resort-hero">
+    <img src="{{ photo.src if photo else resort.image_url }}" alt="{{ resort.name ~ ': ' ~ photo.name if photo else (resort.name if research and research.image_verified else 'Mauritius holiday inspiration, not a verified photograph of this resort') }}" width="1600" height="600" fetchpriority="high">
+    <div class="container resort-hero-inner"><p class="eyebrow">{{ research.coast if research else resort.location }}{% if research and research.stars %} &middot; {{ research.stars }}{% endif %}</p>
+      <h1>{{ research.title if research else resort.name }}</h1><p class="resort-positioning">{{ research.intro if research else resort.description|plain }}</p>
+      {% if research %}<ul class="resort-best-for" aria-label="Best suited to">{% for label in research.best_for.split(',') %}<li>{{ label.strip() }}</li>{% endfor %}</ul>{% endif %}
+      <div class="resort-actions"><a class="button" href="#packages">View packages <i data-lucide="arrow-down"></i></a><a class="button secondary" href="#quote">Get my quote <i data-lucide="arrow-right"></i></a></div>
+    </div>
+  </header>
+  {% if verified_photos %}{% elif not research or not research.image_verified %}<p class="container resort-photo-caption">Mauritius travel inspiration. This photograph is not verified as {{ resort.name }}.</p>{% endif %}
+  <div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ url_for('public.home') }}">Home</a><span>/</span><a href="{{ url_for('public.resorts') }}">Mauritius resorts</a><span>/</span><span aria-current="page">{{ resort.name }}</span></nav></div>
+  <nav class="resort-jump-nav" aria-label="Resort information"><div class="container">
+    <a href="#packages">Packages</a>{% if research %}<a href="#facts">Quick facts</a><a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#families">Families</a><a href="#activities">Beach &amp; activities</a>{% endif %}<a href="#alternatives">Compare</a><a href="#quote">Get a quote</a>
+  </div></nav>
+  {% if resort.unavailable_from and resort.unavailable_to %}<div class="container resort-notice" role="note"><strong>Planned closure</strong><p>{{ resort.name }} is scheduled to close from {{ resort.unavailable_from }} to {{ resort.unavailable_to }}. Ask Dirk about alternatives for affected dates.</p></div>{% elif research and research.get('closure_from') %}<div class="container resort-notice" role="note"><strong>Planned closure</strong><p>{{ research.caution }}</p></div>{% endif %}
+  {% if research %}
+  {% if resort.code == 'TAB' %}<div class="container resort-notice" role="note"><strong>Renovation: 15 May to 15 October 2026</strong><p>Supplier photographs and 2025-26 room plans may show pre-renovation interiors. Confirm the reopening date and your room's current layout with Dirk.</p></div>{% endif %}
+  {% set resort_photos = media|selectattr('category','equalto','resort')|list %}
+  {% set room_photos = media|selectattr('category','equalto','room')|list %}
+  {% set room_plans = media|selectattr('category','equalto','plan')|list %}
+  {% set resort_maps = media|selectattr('category','equalto','map')|list %}
+  {% endif %}
+  {% include 'resort_packages.html' %}
+  {% if research %}
+  {% if resort_photos %}<section class="container section" id="photos"><div class="resort-media-band"><div class="rooms-preview-heading"><h2 class="resort-icon-heading"><i data-lucide="camera" aria-hidden="true"></i>Around the resort</h2><div class="rooms-preview-controls"><button type="button" data-room-prev aria-label="Previous resort photographs" title="Previous resort photographs"><i data-lucide="chevron-left"></i></button><button type="button" data-room-next aria-label="Next resort photographs" title="Next resort photographs"><i data-lucide="chevron-right"></i></button></div></div><div class="rooms-preview-track" tabindex="0" role="region" aria-label="{{ resort.name }} resort photographs carousel">{% for photo in resort_photos %}<figure><img src="{{ photo.src }}" alt="{{ photo.name }}" width="600" height="400" loading="lazy" decoding="async"><figcaption><h3>{{ photo.name }}</h3></figcaption></figure>{% endfor %}</div><div class="rooms-preview-bottom"><p data-room-position aria-live="polite"></p></div></div></section>{% endif %}
+  <section id="facts" class="container section"><div class="resort-media-band resort-facts-band"><h2 class="resort-icon-heading"><i data-lucide="info" aria-hidden="true"></i>Quick resort facts</h2><dl class="resort-facts">
+    {% for icon, label, value in [('map-pin','Location',research.area ~ ' / ' ~ research.coast),('star','Classification',research.stars),('users','Best for',research.best_for),('bus','Airport transfer',research.transfer)] %}<div><dt><i data-lucide="{{ icon }}" aria-hidden="true"></i>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
+  </dl></div></section>
+  <section class="container section"><div class="seasonal-glance-grid resort-info-grid resort-why"><div><i data-lucide="sparkles" aria-hidden="true"></i><div><p class="eyebrow">WHAT SETS IT APART</p><h2>Why choose {{ resort.name }}?</h2><p>{{ research.why }}</p></div></div><div><i data-lucide="user-round" aria-hidden="true"></i><aside><p class="eyebrow">PERSONAL ADVICE</p><h2>Dirk's Take</h2>{% if resort.advisor_notes %}<p class="page-body">{{ resort.advisor_notes }}</p>{% else %}<p>Is this the right resort for your party, dates and budget? Discuss the room, wing and meal plan with Dirk before you decide.</p>{% endif %}<a class="text-link" href="{{ url_for('public.contact', resort=resort.name) }}">Ask Dirk about this resort <i data-lucide="arrow-right"></i></a></aside></div></div></section>
+  <section id="dining" class="resort-soft-band"><div class="container section"><div class="resort-media-band resort-headed-panel"><h2 class="resort-icon-heading"><i data-lucide="utensils" aria-hidden="true"></i>Restaurants &amp; bars</h2><div class="seasonal-glance-grid resort-info-grid">{% for venue in research.dining %}<div><i data-lucide="{{ 'wine' if 'bar' in venue.name|lower else 'utensils' }}" aria-hidden="true"></i><div><h3>{{ venue.name }}</h3><p>{{ venue.detail }}</p></div></div>{% endfor %}
+    <div><i data-lucide="clipboard-list" aria-hidden="true"></i><div><h3>Meal plans</h3><p>{{ research.meals }}</p><p>Confirm restaurant reservations, evening dress requirements, drinks, premium dishes and arrival/departure-day meals with Dirk. Your package inclusions take precedence over a general meal-plan label.</p><a class="text-link" href="{{ url_for('public.guide_detail',slug='meal-plans') }}">Understanding all-inclusive options <i data-lucide="arrow-right"></i></a></div></div></div>
+  </div></div></section>
+  <section id="families" class="container section"><div class="seasonal-glance-grid resort-info-grid"><div><i data-lucide="users" aria-hidden="true"></i><div><h2>Families &amp; children</h2><p>{{ research.families }}</p><a class="text-link" href="{{ url_for('public.guide_detail',slug='family-rooms') }}">Planning your family room <i data-lucide="arrow-right"></i></a></div></div><div><i data-lucide="map-pin" aria-hidden="true"></i><div><h2>Location &amp; transfers</h2><p>{{ research.location }}</p><a class="text-link" href="{{ url_for('public.guide_detail',slug='coast-and-location') }}">Explore Mauritius locations <i data-lucide="arrow-right"></i></a></div></div></div></section>
+  {% if resort_maps %}<section id="map" class="container section"><div class="resort-media-band resort-map-band"><h2 class="resort-icon-heading"><i data-lucide="map" aria-hidden="true"></i>Resort map</h2>{% for photo in resort_maps %}<img{% if photo.name == 'Mauricia Mauritius location map' %} class="resort-location-map"{% endif %} src="{{ photo.src }}" alt="{{ resort.name }}: {{ photo.name }}" loading="lazy" decoding="async">{% endfor %}</div></section>{% endif %}
+  <section id="activities" class="container section"><div class="resort-media-band resort-headed-panel"><h2 class="resort-icon-heading"><i data-lucide="waves" aria-hidden="true"></i>Beach, pools &amp; activities</h2><div class="seasonal-glance-grid resort-info-grid"><div><i data-lucide="waves" aria-hidden="true"></i><div><h3>Beach &amp; pools</h3><p>{{ research.beach }} {{ research.pools }}</p></div></div><div><i data-lucide="sailboat" aria-hidden="true"></i><div><h3>Included activities</h3><p>{{ research.included }}</p></div></div><div><i data-lucide="ticket" aria-hidden="true"></i><div><h3>Available at additional cost</h3><p>{{ research.paid }}</p></div></div><div><i data-lucide="flower-2" aria-hidden="true"></i><div><h3>Spa, fitness, golf &amp; entertainment</h3><p>{{ research.wellness }}</p></div></div></div><p class="muted resort-panel-note">Activity schedules, weather, age limits and safety conditions apply. Confirm any must-have activity before booking.</p></div></section>
+  <section class="container section resort-considerations"><div class="resort-media-band resort-headed-panel"><h2 class="resort-icon-heading"><i data-lucide="clipboard-check" aria-hidden="true"></i>Important considerations</h2><div class="seasonal-glance-grid resort-info-grid"><div><i data-lucide="info" aria-hidden="true"></i><div><h3>Before you choose</h3><p>{{ research.caution }}</p>{% if resort.consideration and resort.consideration != research.caution %}<p>{{ resort.consideration }}</p>{% endif %}</div></div>
+    <div><i data-lucide="clipboard-check" aria-hidden="true"></i><div><h3>Confirm your requirements</h3><p>Resort information checked against official Beachcomber information. Last checked: {{ checked }}. Facilities and services may change. Confirm specific requirements with Dirk before booking.</p><a class="text-link" href="{{ research.source }}" target="_blank" rel="noopener noreferrer">Official reference</a>{% if research.factsheet %} &middot; <a class="text-link" href="{{ research.factsheet }}" target="_blank" rel="noopener noreferrer">Room factsheet</a>{% endif %}</div></div></div>
+  </div></section>
+  {% else %}<section class="container section"><h2>Plan your stay</h2><p>{{ resort.description|plain }}</p><p>Detailed resort information is awaiting source review. Ask Dirk to confirm rooms and facilities for your plans.</p></section>{% endif %}
+  <section id="alternatives" class="container section"><div class="resort-media-band resort-headed-panel"><h2 class="resort-icon-heading"><i data-lucide="scale" aria-hidden="true"></i>Also consider</h2><p>Alternatives for a similar type of holiday, not a claim of equal prices. Compare live quotes using the same dates, party and meal plan.</p><div class="seasonal-glance-grid resort-info-grid">{% for other in alternatives %}<div><i data-lucide="palmtree" aria-hidden="true"></i><div><p class="eyebrow">{{ other.location }}</p><h3><a href="{{ url_for('public.resort_detail',slug=other.slug) }}">{{ other.name }}</a></h3><p>{{ other.description|plain }}</p><a class="text-link" href="{{ url_for('public.compare',resort=[resort.code,other.code]) }}">Compare these resorts <i data-lucide="scale"></i></a></div></div>{% endfor %}</div></div></section>
+  {% if faqs %}<section class="container section resort-faq"><div class="resort-media-band resort-headed-panel"><h2 class="resort-icon-heading"><i data-lucide="circle-help" aria-hidden="true"></i>{{ resort.name }}: your questions</h2><div class="seasonal-glance-grid resort-info-grid">{% for question, answer in faqs %}<div><i data-lucide="circle-help" aria-hidden="true"></i><div><h3>{{ question }}</h3><p>{{ answer }}</p></div></div>{% endfor %}</div></div></section>{% endif %}
+</article>
+{% include 'room_details.html' %}
+{% if media %}<dialog class="resort-viewer" aria-label="Resort photograph viewer">
+<div class="resort-viewer-toolbar"><span data-photo-counter></span><button type="button" data-photo-close aria-label="Close photograph" title="Close"><i data-lucide="x"></i></button></div>
+<div class="resort-viewer-stage"><button type="button" data-photo-prev aria-label="Previous photograph" title="Previous"><i data-lucide="chevron-left"></i></button><img data-photo-full alt=""><button type="button" data-photo-next aria-label="Next photograph" title="Next"><i data-lucide="chevron-right"></i></button></div>
+<p data-photo-caption></p><p data-photo-note></p>
+</dialog>{% endif %}
+{% endblock %}

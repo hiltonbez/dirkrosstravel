@@ -1,0 +1,68 @@
+.home-grey-preview {
+  --panel-grey: #eef0f2;
+  --panel-gap: 64px;
+  background: #fff;
+  padding-bottom: 32px;
+}
+.home-grey-preview > .start-section,
+.home-grey-preview > .container.section,
+.home-grey-preview > .hybrid-offers > .container,
+.home-grey-preview > .home-trust-band > .container,
+.home-grey-preview > .expert-band > .container {
+  position: relative;
+  width: calc(100% - 64px);
+  max-width: 1136px;
+  margin: var(--panel-gap) auto 0;
+  padding: 36px;
+  background: var(--panel-grey);
+  border: 0;
+}
+.home-grey-preview > .hybrid-offers,
+.home-grey-preview > .home-trust-band,
+.home-grey-preview > .expert-band {
+  background: #fff;
+  padding: 0;
+  border: 0;
+}
+.home-grey-preview > .container.section::before,
+.home-grey-preview > .hybrid-offers > .container::before,
+.home-grey-preview > .home-trust-band > .container::before,
+.home-grey-preview > .expert-band > .container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;
+  border-top: 1px solid var(--line);
+}
+.home-grey-preview .start-section h2 { text-align: left; }
+.home-grey-preview .start-paths { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; }
+.home-grey-preview .start-paths > a { padding: 0; border: 0; }
+.home-grey-preview .start-paths > a > svg:first-child { color: var(--ink); }
+.home-grey-preview .guide-previews,
+.home-grey-preview .home-review-grid,
+.home-grey-preview .enquiry-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.home-grey-preview .guide-previews .guide-preview:last-child { grid-column: auto; }
+.home-grey-preview .expert-inner { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 36px; }
+.home-grey-preview .section-heading { gap: 20px; }
+@media (max-width: 700px) {
+  .home-grey-preview { --panel-gap: 48px; padding-bottom: 24px; }
+  .home-grey-preview > .start-section,
+  .home-grey-preview > .container.section,
+  .home-grey-preview > .hybrid-offers > .container,
+  .home-grey-preview > .home-trust-band > .container,
+  .home-grey-preview > .expert-band > .container { width: calc(100% - 44px); padding: 26px 22px; }
+  .home-grey-preview > .container.section::before,
+  .home-grey-preview > .hybrid-offers > .container::before,
+  .home-grey-preview > .home-trust-band > .container::before,
+  .home-grey-preview > .expert-band > .container::before { top: -24px; }
+  .home-grey-preview .start-paths,
+  .home-grey-preview .guide-previews,
+  .home-grey-preview .home-review-grid,
+  .home-grey-preview .enquiry-steps,
+  .home-grey-preview .expert-inner,
+  .home-grey-preview .package-grid { grid-template-columns: 1fr; }
+  .home-grey-preview .section-heading { flex-direction: column; }
+  .home-grey-preview .collection-tabs { gap: 16px; }
+  .home-grey-preview .home-advisor { flex-direction: column; }
+}

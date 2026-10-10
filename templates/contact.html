@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import enquiry_form %}
+{% block title %}Contact Dirk{% endblock %}
+{% block content %}
+<section class="container section contact-layout"><div>
+  <p class="eyebrow">LET'S PLAN YOUR ESCAPE</p><h1>Talk to Dirk</h1>
+  {% if request.args.get('interest') == 'travel' %}
+  <p class="lead">Tell me where you would love to go, who is travelling, your dates and your budget. Not sure where to go? Let's start with your ideas.</p>
+  {% else %}<p class="lead">Tell me which Beachcomber resort interests you, when you'd like to travel, and who is coming along.</p>{% endif %}
+  {% if site.get('contact_email') %}<p><a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a></p>{% endif %}
+  {% if site.get('contact_phone') %}<p>{{ site.contact_phone }}</p>{% endif %}
+  {% if site.get('whatsapp_number') %}<p><a class="button" href="https://wa.me/{{ site.whatsapp_number }}" target="_blank" rel="noopener">WhatsApp Dirk <i data-lucide="message-circle"></i></a></p>{% endif %}
+  <p class="muted">Your details are stored for Dirk to review and respond to this enquiry.</p>
+  <div class="contact-next"><h2>What happens next?</h2>{% include 'enquiry_steps.html' %}<p class="muted">Submitting an enquiry does not make a booking or hold a price. For time-sensitive travel, contact me directly.</p></div>
+</div><div>{{ enquiry_form(values, planning_summary) }}</div></section>
+{% endblock %}

@@ -1,0 +1,1097 @@
+{
+  "VIC": [
+    {
+      "name": "Aerial view",
+      "src": "/static/resorts/vic/victoria_aerial1.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_aerial1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Boathouse",
+      "src": "/static/resorts/vic/victoria_lifestyle_boathouse1-25.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_lifestyle_boathouse1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Reception",
+      "src": "/static/resorts/vic/victoria_reception1.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_reception1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Clear tropical waters",
+      "src": "/static/resorts/vic/victoria_beach_10.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_beach_10.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Junior Suite loungers",
+      "src": "/static/resorts/vic/victoria_jnr_loungers.jpg",
+      "category": "room",
+      "room": "Junior Suite loungers",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_jnr_loungers.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (second floor)",
+      "src": "/static/resorts/vic/victoria_deluxe_floor_second_floor_bathroom-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room (second floor)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_deluxe_floor_second_floor_bathroom-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (second floor) patio",
+      "src": "/static/resorts/vic/victoria_deluxe_floor_second_floor3-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room (second floor) patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_deluxe_floor_second_floor3-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (ground floor) bathroom",
+      "src": "/static/resorts/vic/victoria_deluxe_room_ground_floor_bathroom2-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room (ground floor) bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_deluxe_room_ground_floor_bathroom2-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Two-Bedroom Family Apartment",
+      "src": "/static/resorts/vic/victoria_2-bedroom_family_apartment1-25.jpg",
+      "category": "room",
+      "room": "Two-Bedroom Family Apartment",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_2-bedroom_family_apartment1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Two-Bedroom Family Apartment bathroom",
+      "src": "/static/resorts/vic/victoria_2-bedroom_family_apartment_bathroom1-25.jpg",
+      "category": "room",
+      "room": "Two-Bedroom Family Apartment bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_2-bedroom_family_apartment_bathroom1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Two-Bedroom Family Apartment patio",
+      "src": "/static/resorts/vic/victoria_2-bedroom_family_apartment_balcony-25.jpg",
+      "category": "room",
+      "room": "Two-Bedroom Family Apartment patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_2-bedroom_family_apartment_balcony-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (ground floor)",
+      "src": "/static/resorts/vic/victoria_deluxe_room_ground_floor1-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room (ground floor)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_deluxe_room_ground_floor1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (ground floor) terrace",
+      "src": "/static/resorts/vic/victoria_deluxe_room_ground_floor3-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room (ground floor) terrace",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_deluxe_room_ground_floor3-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Superior Room (First Floor)",
+      "src": "/static/resorts/vic/victoria_superior_room_first_floor1-25.jpg",
+      "category": "room",
+      "room": "Superior Room (First Floor)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_superior_room_first_floor1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Superior Room",
+      "src": "/static/resorts/vic/victoria_superior_room_first_floor3-25.jpg",
+      "category": "room",
+      "room": "Superior Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_superior_room_first_floor3-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Junior Suite",
+      "src": "/static/resorts/vic/victoria_junior_suite1-25.jpg",
+      "category": "room",
+      "room": "Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/victoria/victoria_junior_suite1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/vic/Victoria_Beachcomber_Property_Map_2023-24.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/victoria/resort_map/Victoria_Beachcomber_Property_Map_2023-24.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ],
+  "MAU": [
+    {
+      "name": "Reception",
+      "src": "/static/resorts/mau/mauricia_reception_arrival1-25.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_reception_arrival1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Pool and Baywatch Bar",
+      "src": "/static/resorts/mau/mauricia_pool14.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_pool14.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beach",
+      "src": "/static/resorts/mau/mauricia_beach3.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_beach3.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Gardens",
+      "src": "/static/resorts/mau/mauricia_gardens.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_gardens.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "The Village",
+      "src": "/static/resorts/mau/mauricia_village.jpg",
+      "category": "room",
+      "room": "The Village",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_village.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Superior Room",
+      "src": "/static/resorts/mau/mauricia_sup_bf1.jpg",
+      "category": "room",
+      "room": "Beachfront Superior Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_sup_bf1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa",
+      "src": "/static/resorts/mau/mauricia_villa1.jpg",
+      "category": "room",
+      "room": "Villa",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_villa1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Standard Room",
+      "src": "/static/resorts/mau/mauricia_std_bf2.jpg",
+      "category": "room",
+      "room": "Standard Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_std_bf2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Suite",
+      "src": "/static/resorts/mau/mauricia_suite.jpg",
+      "category": "room",
+      "room": "Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/mauricia/mauricia_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/mau/Mauricia_Beachcomber_Property_Map_2023-24.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/mauricia/resort_map/Mauricia_Beachcomber_Property_Map_2023-24.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    },
+    {
+      "name": "Mauricia Mauritius location map",
+      "src": "/static/resorts/mau/mauricia-mauritius-location-map-2025-26.png",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Mauricia_Beachcomber_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "Location illustration from the supplier 2025-26 factsheet."
+    }
+  ],
+  "CAN": [
+    {
+      "name": "Aerial view",
+      "src": "/static/resorts/can/Canonnier_aerial_4.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/Canonnier_aerial_4.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Reception",
+      "src": "/static/resorts/can/canonnier_25_reception.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_25_reception.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Relaxation zone",
+      "src": "/static/resorts/can/canonnier_relaxation_zone.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_relaxation_zone.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Fun!",
+      "src": "/static/resorts/can/canonnier_kids_swing.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_kids_swing.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Garden-facing Standard Room",
+      "src": "/static/resorts/can/canonnier_standard_gf2.jpg",
+      "category": "room",
+      "room": "Garden-facing Standard Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_standard_gf2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Sea-facing Superior Room",
+      "src": "/static/resorts/can/canonnier_superior_sf.jpg",
+      "category": "room",
+      "room": "Sea-facing Superior Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_superior_sf.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Garden-facing Apartment kids' room",
+      "src": "/static/resorts/can/canonnier_fam_apt_kids.jpg",
+      "category": "room",
+      "room": "Garden-facing Apartment kids' room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_fam_apt_kids.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Family Duplex kids' room",
+      "src": "/static/resorts/can/canonnier_fam_duplex_kids.jpg",
+      "category": "room",
+      "room": "Family Duplex kids' room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_fam_duplex_kids.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Standard room",
+      "src": "/static/resorts/can/canonnier_std_rm_decor.jpg",
+      "category": "room",
+      "room": "Standard room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_std_rm_decor.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Sea-facing Deluxe Room",
+      "src": "/static/resorts/can/canonnier_deluxe_sea_facing.jpg",
+      "category": "room",
+      "room": "Sea-facing Deluxe Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_deluxe_sea_facing.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Suite",
+      "src": "/static/resorts/can/canonnier_suite.jpg",
+      "category": "room",
+      "room": "Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Superior Room",
+      "src": "/static/resorts/can/canonnier_superior_room.jpg",
+      "category": "room",
+      "room": "Superior Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_superior_room.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Standard Room (Sea Facing)",
+      "src": "/static/resorts/can/canonnier_standard_sea_facing-25.jpg",
+      "category": "room",
+      "room": "Standard Room (Sea Facing)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_standard_sea_facing-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Standard Room bathroom",
+      "src": "/static/resorts/can/canonnier_standard_sea_facing_bathroom-25.jpg",
+      "category": "room",
+      "room": "Standard Room bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/canonnier/canonnier_standard_sea_facing_bathroom-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/can/Canonnier_Beachcomber_Property_Map_2023-24.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/canonnier/resort_map/Canonnier_Beachcomber_Property_Map_2023-24.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ],
+  "TAB": [
+    {
+      "name": "Aerial pool and beach",
+      "src": "/static/resorts/tab/tab_pool12-aerial.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_pool12-aerial.jpg",
+      "note": "Official supplier image; may predate the 2026 renovation."
+    },
+    {
+      "name": "Reception",
+      "src": "/static/resorts/tab/tab_reception6.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_reception6.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Caravelle Bar drinks",
+      "src": "/static/resorts/tab/tab_la-caravelle11-drinks.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_la-caravelle11-drinks.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "La Caravelle Restaurant",
+      "src": "/static/resorts/tab/tab_caravelle.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_caravelle.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Il Corallo Restaurant",
+      "src": "/static/resorts/tab/tab_il_corallo_view.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_il_corallo_view.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Suite with pool",
+      "src": "/static/resorts/tab/tab_beachfront-suite-with-pool2.jpg",
+      "category": "room",
+      "room": "Beachfront Suite with pool",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_beachfront-suite-with-pool2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Junior Suite",
+      "src": "/static/resorts/tab/tab_tropical_junior_suite2.jpg",
+      "category": "room",
+      "room": "Tropical Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_tropical_junior_suite2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Junior Suite - patio",
+      "src": "/static/resorts/tab/tab_tropical_junior_suite-patio.jpg",
+      "category": "room",
+      "room": "Tropical Junior Suite - patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_tropical_junior_suite-patio.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Junior Suite",
+      "src": "/static/resorts/tab/tab_junior_suite.jpg",
+      "category": "room",
+      "room": "Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_junior_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite with pool - patio",
+      "src": "/static/resorts/tab/tab_bf_senior_suite_patio.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite with pool - patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_bf_senior_suite_patio.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite with pool - lounge",
+      "src": "/static/resorts/tab/tab_bf-snr-lounge.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite with pool - lounge",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_bf-snr-lounge.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite with pool - bedroom",
+      "src": "/static/resorts/tab/tab_bf_snr_suite_with_pool_bedroom.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite with pool - bedroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_bf_snr_suite_with_pool_bedroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite With Pool with pool - bathroom",
+      "src": "/static/resorts/tab/tab_bf_snr_suite_with_pool_bathroom.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite With Pool with pool - bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_bf_snr_suite_with_pool_bathroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Family Suite - parents bedroom",
+      "src": "/static/resorts/tab/tab_family-suite-parents-room.jpg",
+      "category": "room",
+      "room": "Family Suite - parents bedroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_family-suite-parents-room.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Family Suite - kids bedroom",
+      "src": "/static/resorts/tab/tab_family-suite-kids-room.jpg",
+      "category": "room",
+      "room": "Family Suite - kids bedroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_family-suite-kids-room.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Family Suite - patio",
+      "src": "/static/resorts/tab/tab_family_suite.jpg",
+      "category": "room",
+      "room": "Family Suite - patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_family_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Senior Beachfront Suite with pool",
+      "src": "/static/resorts/tab/tab_bf_snr_suite.jpg",
+      "category": "room",
+      "room": "Senior Beachfront Suite with pool",
+      "source": "https://www.beachcomber.co.za/assets/gallery/trou_aux_biches/tab_bf_snr_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/tab/Trou_aux_Biches_Beachcomber_Property_Map_2023-24.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/trouauxbiches/resort_map/Trou_aux_Biches_Beachcomber_Property_Map_2023-24.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    },
+    {
+      "name": "Junior Suite floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im0.jpg",
+      "category": "plan",
+      "room": "Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Beachfront Senior Suite with Pool floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im1.jpg",
+      "category": "plan",
+      "room": "Beachfront Senior Suite with Pool",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Two-Bedroom Family Suite floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im2.jpg",
+      "category": "plan",
+      "room": "Two-Bedroom Family Suite",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Two-Bedroom Pool Villa floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im3.jpg",
+      "category": "plan",
+      "room": "Two-Bedroom Pool Villa",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Three-Bedroom Pool Villa floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im4.jpg",
+      "category": "plan",
+      "room": "Three-Bedroom Pool Villa",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Tropical Junior Suite floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im5.jpg",
+      "category": "plan",
+      "room": "Tropical Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    },
+    {
+      "name": "Beachfront Suite with Pool floor plan",
+      "src": "/static/resorts/tab/floor-plan-Im6.jpg",
+      "category": "plan",
+      "room": "Beachfront Suite with Pool",
+      "source": "https://www.beachcomber.co.za/assets/Factsheets/Trou_aux_Biches_Beachcomber_Golf_Resort_Spa_Factsheet_2025-26.pdf",
+      "note": "2025-26 supplier plan; confirm post-renovation layout.",
+      "rotation": 0
+    }
+  ],
+  "SHA": [
+    {
+      "name": "Resort & Blue Bay",
+      "src": "/static/resorts/sha/shandrani_aerial4.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_aerial4.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Welcome reception",
+      "src": "/static/resorts/sha/shandrani_cool_reception.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_cool_reception.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Aerial view",
+      "src": "/static/resorts/sha/shandrani_aerial3.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_aerial3.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Reception",
+      "src": "/static/resorts/sha/shandrani_reception-25.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_reception-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Shandrani for 2 - Bay-Facing Room",
+      "src": "/static/resorts/sha/shandrani_Bay-facing-room25-1.jpg",
+      "category": "room",
+      "room": "Shandrani for 2 - Bay-Facing Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Bay-facing-room25-1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Shandrani for 2 - Bay-Facing Room - patio",
+      "src": "/static/resorts/sha/shandrani_Bay-facing-room-patio25.jpg",
+      "category": "room",
+      "room": "Shandrani for 2 - Bay-Facing Room - patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Bay-facing-room-patio25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Shandrani for 2 - Beach- and Bay-Facing Room - bathroom",
+      "src": "/static/resorts/sha/shandrani_Beach-and-Bay-facing-bathroom-25.jpg",
+      "category": "room",
+      "room": "Shandrani for 2 - Beach- and Bay-Facing Room - bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Beach-and-Bay-facing-bathroom-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Shandrani for 2 - Beach-Facing Room",
+      "src": "/static/resorts/sha/shandrani_Beach-facing-Sha-for-2-25.jpg",
+      "category": "room",
+      "room": "Shandrani for 2 - Beach-Facing Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Beach-facing-Sha-for-2-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical rooms",
+      "src": "/static/resorts/sha/shandrani_superior_rooms.jpg",
+      "category": "room",
+      "room": "Tropical rooms",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_superior_rooms.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room (Ground Floor)",
+      "src": "/static/resorts/sha/shandrani_Deluxe-Ground-25-1.jpg",
+      "category": "room",
+      "room": "Deluxe Room (Ground Floor)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Deluxe-Ground-25-1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Deluxe Room",
+      "src": "/static/resorts/sha/shandrani_Deluxe-Deluxe-Ground-Rooftop-25.jpg",
+      "category": "room",
+      "room": "Deluxe Room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Deluxe-Deluxe-Ground-Rooftop-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "2-Bedroom Family Apartment Patio",
+      "src": "/static/resorts/sha/shandrani_2-bedroom_deluxe_family_apartment3_patio.jpg",
+      "category": "room",
+      "room": "2-Bedroom Family Apartment Patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_2-bedroom_deluxe_family_apartment3_patio.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Room (Ground Floor)",
+      "src": "/static/resorts/sha/shandrani_Tropical-Ground-25-1.jpg",
+      "category": "room",
+      "room": "Tropical Room (Ground Floor)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_Tropical-Ground-25-1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Two-bedroom Deluxe Family Apartment (New images coming soon)",
+      "src": "/static/resorts/sha/shandrani_two_bedroom_deluxe_family_apartment.jpg",
+      "category": "room",
+      "room": "Two-bedroom Deluxe Family Apartment (New images coming soon)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/shandrani/shandrani_two_bedroom_deluxe_family_apartment.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/sha/Shandrani_Beachcomber_Property_Map_2025-26.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/shandrani/resort_map/Shandrani_Beachcomber_Property_Map_2025-26.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ],
+  "DIN": [
+    {
+      "name": "Aerial view",
+      "src": "/static/resorts/din/dinarobin_aerial8.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_aerial8.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Butik Bar",
+      "src": "/static/resorts/din/dinarobin_butik_bar_friends2-25.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_butik_bar_friends2-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Crescent pool",
+      "src": "/static/resorts/din/dinarobin_aerial_crescent_pool-25.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_aerial_crescent_pool-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Bird's-eye view of a crescent",
+      "src": "/static/resorts/din/dinarobin_crescent.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_crescent.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Senior Suite lounge",
+      "src": "/static/resorts/din/dinarobin_senior_suite2_aug18.jpg",
+      "category": "room",
+      "room": "Senior Suite lounge",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_senior_suite2_aug18.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Senior Suite bathroom",
+      "src": "/static/resorts/din/dinarobin_senior_suite_bathroom.jpg",
+      "category": "room",
+      "room": "Senior Suite bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_senior_suite_bathroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Senior Suite patio",
+      "src": "/static/resorts/din/dinarobin_senior_suite3_patio_nov21.jpg",
+      "category": "room",
+      "room": "Senior Suite patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_senior_suite3_patio_nov21.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Junior Suite",
+      "src": "/static/resorts/din/dinarobin_junior_suite.jpg",
+      "category": "room",
+      "room": "Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_junior_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite",
+      "src": "/static/resorts/din/dinarobin_senior_suite.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_senior_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa",
+      "src": "/static/resorts/din/dinarobin_villa1.jpg",
+      "category": "room",
+      "room": "Villa",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_villa1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Yoga & meditation room",
+      "src": "/static/resorts/din/dinarobin_spa4.jpg",
+      "category": "room",
+      "room": "Yoga & meditation room",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_spa4.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Dinarobin Villa outdoors",
+      "src": "/static/resorts/din/dinarobin_villa5.jpg",
+      "category": "room",
+      "room": "Dinarobin Villa outdoors",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_villa5.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Dinarobin Villa lounge",
+      "src": "/static/resorts/din/dinarobin_villa6.jpg",
+      "category": "room",
+      "room": "Dinarobin Villa lounge",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_villa6.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Zen Junior Suite",
+      "src": "/static/resorts/din/dinarobin_zen_junior_suite1_aug18.jpg",
+      "category": "room",
+      "room": "Zen Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_zen_junior_suite1_aug18.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Senior Suite - terrace",
+      "src": "/static/resorts/din/dinarobin_couple_bf_senior_suite-25.jpg",
+      "category": "room",
+      "room": "Beachfront Senior Suite - terrace",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_couple_bf_senior_suite-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Dinarobin Villa - beach",
+      "src": "/static/resorts/din/dinarobin_villa_beach_area1-25.jpg",
+      "category": "room",
+      "room": "Dinarobin Villa - beach",
+      "source": "https://www.beachcomber.co.za/assets/gallery/dinarobin/dinarobin_villa_beach_area1-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/din/Dinarobin_Beachcomber_Property_Map_2024-25.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/dinarobin/resort_map/Dinarobin_Beachcomber_Property_Map_2024-25.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ],
+  "PAR": [
+    {
+      "name": "Classic view of Le Morne",
+      "src": "/static/resorts/par/paradis_aerial_7.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_aerial_7.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Take me there",
+      "src": "/static/resorts/par/paradis_aerial_5.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_aerial_5.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Entrance",
+      "src": "/static/resorts/par/paradis_entrance.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_entrance.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Pristine peninsula",
+      "src": "/static/resorts/par/paradis_aerial_1_pristine_peninsula.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_aerial_1_pristine_peninsula.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Junior Suite patio",
+      "src": "/static/resorts/par/paradis_junior_bf_patio.jpg",
+      "category": "room",
+      "room": "Beachfront Junior Suite patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_junior_bf_patio.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Beachfront Junior Suite",
+      "src": "/static/resorts/par/paradis_junior_bf2.jpg",
+      "category": "room",
+      "room": "Beachfront Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_junior_bf2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Paradis Room (Bay Facing)",
+      "src": "/static/resorts/par/paradis_ocean_room.jpg",
+      "category": "room",
+      "room": "Paradis Room (Bay Facing)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_ocean_room.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Paradis Suite (Beachfront)",
+      "src": "/static/resorts/par/paradis_ocean_suite_bf.jpg",
+      "category": "room",
+      "room": "Paradis Suite (Beachfront)",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_ocean_suite_bf.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa",
+      "src": "/static/resorts/par/paradis_villa_panorama.jpg",
+      "category": "room",
+      "room": "Villa",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_panorama.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa bathroom",
+      "src": "/static/resorts/par/paradis_villa_bathroom.jpg",
+      "category": "room",
+      "room": "Villa bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_bathroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa terrace",
+      "src": "/static/resorts/par/paradis_family_villa_terrace-25.jpg",
+      "category": "room",
+      "room": "Villa terrace",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_family_villa_terrace-25.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa beach",
+      "src": "/static/resorts/par/paradis_villa_beach.jpg",
+      "category": "room",
+      "room": "Villa beach",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_beach.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa bedroom",
+      "src": "/static/resorts/par/paradis_villa_bedroom1.jpg",
+      "category": "room",
+      "room": "Villa bedroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_bedroom1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa garden",
+      "src": "/static/resorts/par/paradis_villa_garden3.jpg",
+      "category": "room",
+      "room": "Villa garden",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_garden3.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa lounge",
+      "src": "/static/resorts/par/paradis_villa_lounge.jpg",
+      "category": "room",
+      "room": "Villa lounge",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_lounge.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Villa patio",
+      "src": "/static/resorts/par/paradis_villa_patio_1.jpg",
+      "category": "room",
+      "room": "Villa patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/paradis/paradis_villa_patio_1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/par/Paradis_Beachcomber_Property_Map_2025-26.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/paradis/resort_map/Paradis_Beachcomber_Property_Map_2025-26.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ],
+  "RP": [
+    {
+      "name": "Resort & beach views",
+      "src": "/static/resorts/rp/royal_palm_aerial1.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_aerial1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Reception",
+      "src": "/static/resorts/rp/royal_palm_reception6.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_reception6.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Royal views",
+      "src": "/static/resorts/rp/royal_palm_royal_views.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_royal_views.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Reception area",
+      "src": "/static/resorts/rp/royal_palm_reception_lounging_area.jpg",
+      "category": "resort",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_reception_lounging_area.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Suite bathroom",
+      "src": "/static/resorts/rp/royal_palm_Tropical_suite_bathroom.jpg",
+      "category": "room",
+      "room": "Tropical Suite bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_Tropical_suite_bathroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Suite bedroom",
+      "src": "/static/resorts/rp/royal_palm_tropical_suite_bedroom.jpg",
+      "category": "room",
+      "room": "Tropical Suite bedroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_tropical_suite_bedroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Suite patio",
+      "src": "/static/resorts/rp/royal_palm_tropical_suite_patio.jpg",
+      "category": "room",
+      "room": "Tropical Suite patio",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_tropical_suite_patio.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Tropical Suite",
+      "src": "/static/resorts/rp/royal_palm_tropical_suite_stairs1.jpg",
+      "category": "room",
+      "room": "Tropical Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_tropical_suite_stairs1.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "In-suite breakfast",
+      "src": "/static/resorts/rp/royal_palm_in_suite_breakfast.jpg",
+      "category": "room",
+      "room": "In-suite breakfast",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_in_suite_breakfast.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Junior Suite",
+      "src": "/static/resorts/rp/royal_palm_junior_suite.jpg",
+      "category": "room",
+      "room": "Junior Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_junior_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Room frontage",
+      "src": "/static/resorts/rp/royal_palm_room_frontage.jpg",
+      "category": "room",
+      "room": "Room frontage",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_room_frontage.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Royal Villa",
+      "src": "/static/resorts/rp/royal_palm_royal_villa.jpg",
+      "category": "room",
+      "room": "Royal Villa",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_royal_villa.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Presidential Suite",
+      "src": "/static/resorts/rp/royal_palm_presidential_suite.jpg",
+      "category": "room",
+      "room": "Presidential Suite",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_presidential_suite.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Ocean Suite stairs to the beach",
+      "src": "/static/resorts/rp/royal_palm_senior_suite2.jpg",
+      "category": "room",
+      "room": "Ocean Suite stairs to the beach",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_senior_suite2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "In-Suite breakfast",
+      "src": "/static/resorts/rp/royal_palm_in-suite_breakfast2.jpg",
+      "category": "room",
+      "room": "In-Suite breakfast",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_in-suite_breakfast2.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Ocean Suite bathroom",
+      "src": "/static/resorts/rp/royal_palm_ocean_suite_bathroom.jpg",
+      "category": "room",
+      "room": "Ocean Suite bathroom",
+      "source": "https://www.beachcomber.co.za/assets/gallery/royal_palm/royal_palm_ocean_suite_bathroom.jpg",
+      "note": "Official supplier image; decor and layout may change."
+    },
+    {
+      "name": "Resort map",
+      "src": "/static/resorts/rp/Royal_Palm_Beachcomber_Property_Map_2025-26.jpg",
+      "category": "map",
+      "room": "",
+      "source": "https://www.beachcomber.co.za/assets/hotels/royalpalm/resort_map/Royal_Palm_Beachcomber_Property_Map_2025-26.jpg",
+      "note": "Supplier property map; confirm the current layout."
+    }
+  ]
+}

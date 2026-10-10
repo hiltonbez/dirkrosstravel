@@ -1,0 +1,34 @@
+{% if seasonal_offers %}
+<div class="seasonal-offers" data-seasonal-offers>
+  <div class="seasonal-filters" role="group" aria-label="Travel period"><button type="button" data-season-filter="all" aria-pressed="true">All dates</button><button type="button" data-season-filter="summer" aria-pressed="false">December &amp; New Year</button><button type="button" data-season-filter="school" aria-pressed="false">School breaks</button></div>
+  <section class="seasonal-glance resort-media-band resort-headed-panel" aria-labelledby="holiday-glance-heading">
+    <div class="seasonal-glance-heading"><h3 id="holiday-glance-heading" class="resort-icon-heading"><i data-lucide="plane" aria-hidden="true"></i>Your holiday, at a glance</h3><label>Travel dates<select data-glance-select>{% for offer in seasonal_offers %}<option value="{{ offer.key }}">{{ offer.dates }}</option>{% endfor %}</select></label></div>
+    <div class="seasonal-glance-grid" aria-live="polite">
+      <div><i data-lucide="plane"></i><div><h4>Flights from Johannesburg</h4><p data-glance-flights>Flights requested. Checking supplier options for these dates.</p></div></div>
+      <div><i data-lucide="arrow-left-right"></i><div><h4>Airport transfers</h4><p data-glance-transfers>Confirm inclusion, transfer type and arrival arrangements with Dirk.</p></div></div>
+      <div><i data-lucide="bed-double"></i><div><h4>7 nights at {{ resort.name }}</h4><p data-glance-room>Room category to be confirmed, for 2 adults sharing.</p></div></div>
+      <div><i data-lucide="utensils"></i><div><h4 data-glance-meal>Meal plan</h4><p data-glance-meal-note>Checking the supplier meal plan for these dates.</p></div></div>
+    </div>
+    <p class="seasonal-glance-note" data-glance-note>Supplier details are subject to confirmation. Nothing is held or booked.</p>
+  </section>
+  {% set photos = seasonal_photos %}
+  <div class="seasonal-grid">
+    {% for offer in seasonal_offers %}<article class="seasonal-offer" data-seasonal-offer data-offer-key="{{ offer.key }}" data-season="{{ 'summer' if offer.departure[5:7] in ['12','01'] else 'school' }}" data-price-url="{{ url_for('public.seasonal_price', slug=resort.slug, offer_key=offer.key) }}">
+      {% if loop.index0 < photos|length %}{% set photo = photos[loop.index0] %}<a class="seasonal-photo" href="#photos"><img src="{{ photo.src }}" alt="{{ resort.name }}: {{ photo.name }}" width="600" height="400" loading="lazy"><span>{{ offer.label }}</span></a>{% endif %}
+      <div class="seasonal-card-body">{% if loop.index0 >= photos|length %}<p class="eyebrow">{{ offer.label }}</p>{% endif %}<h4>{{ offer.dates }}</h4>
+      <div class="seasonal-price" aria-live="polite"><p class="seasonal-availability" data-offer-status>Checking supplier price...</p><p class="price" data-offer-price hidden></p><p class="seasonal-price-basis" data-offer-basis hidden>per person sharing</p><p class="seasonal-total" data-offer-total hidden></p><div class="seasonal-room"><p data-offer-room hidden></p><p data-offer-meal hidden></p></div><div class="seasonal-help" data-offer-help hidden><h5>Let's find your holiday</h5><p>I'll check room and flight options for these dates, or help you explore alternatives.</p></div></div>
+      <form method="post" action="{{ url_for('public.search_quote') }}" data-offer-form><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        {% for name,value in [('hotelCode',resort.code),('dateDeparture',offer.departure),('dateReturn',offer.returning),('departureCity','JOHANNESBURG'),('nbrAdults','2'),('nbrChildren','0'),('nbrInfants','0'),('includeAir','on')] %}<input type="hidden" name="{{ name }}" value="{{ value }}">{% endfor %}
+        <button class="button" type="submit">Get my holiday quote <i data-lucide="arrow-right"></i></button>
+      </form>
+      <a class="button secondary" data-offer-enquire hidden href="{{ url_for('public.contact',resort=resort.name,message='Please check ' ~ resort.name ~ ' for ' ~ offer.dates ~ ', departing Johannesburg, 7 nights for 2 adults sharing, including flights.') }}">Ask Dirk about these dates <i data-lucide="arrow-right"></i></a>
+      <details class="seasonal-price-details"><summary>Price &amp; availability details</summary><p class="muted" data-offer-checked hidden></p><p>Flights requested. Confirm flights, transfers and all inclusions in your quote. Prices and availability can change; nothing is held or booked.</p></details>
+      </div>
+    </article>{% endfor %}
+  </div>
+  {% include 'resort_quote.html' %}
+  {% include 'resort_rooms.html' %}
+  <div class="seasonal-glance-grid resort-info-grid seasonal-family"><div><i data-lucide="users" aria-hidden="true"></i><div><h4>Bringing the family?</h4><p>Let's find the right room and price for your children's ages.</p></div></div><div><i data-lucide="message-circle" aria-hidden="true"></i><div><h4>Your family holiday quote</h4><a class="button secondary" href="#quote" data-family-quote>Get my family quote <i data-lucide="arrow-right"></i></a></div></div></div>
+  <noscript><p>Enter your travel dates and family details in the quote form above.</p></noscript>
+</div>
+{% endif %}

@@ -1,0 +1,388 @@
+[
+  {
+    "name": "Standard Room",
+    "size": "32",
+    "capacity": "2 adults + 1 young child (up to 5); confirm age rules in your quote",
+    "detail": "A first- or second-floor room overlooking the gardens, with a balcony and a shower bathroom.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-room",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Standard Room",
+        "room": "Standard Room",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/standard-room-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-room",
+        "note": ""
+      },
+      {
+        "name": "Standard Room - additional view",
+        "room": "Standard Room",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/standard-room-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-room",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard Room floor plan",
+        "room": "Standard Room",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/standard-room-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-room",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Standard Beachfront",
+    "size": "32",
+    "capacity": "2 adults + 1 young child (up to 5); confirm age rules in your quote",
+    "detail": "A bay-facing room with a balcony and a shower bathroom. Choose this category specifically for its beachfront position.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-beachfront",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Standard Beachfront",
+        "room": "Standard Beachfront",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/standard-beachfront-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-beachfront",
+        "note": ""
+      },
+      {
+        "name": "Standard Beachfront - additional view",
+        "room": "Standard Beachfront",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/standard-beachfront-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-beachfront",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard Beachfront floor plan",
+        "room": "Standard Beachfront",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/standard-beachfront-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/standard-beachfront",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Superior Room",
+    "size": "38",
+    "capacity": "2 adults + 1 child (up to 17) + 1 infant (up to 2); confirm age rules in your quote",
+    "detail": "A larger room with a lounge area and a bathroom with a bath, shower and separate toilet.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-room",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Superior Room",
+        "room": "Superior Room",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/superior-room-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-room",
+        "note": ""
+      },
+      {
+        "name": "Superior Room - additional view",
+        "room": "Superior Room",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/superior-room-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-room",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Superior Room floor plan",
+        "room": "Superior Room",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/superior-room-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-room",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Superior Beachfront",
+    "size": "38",
+    "capacity": "2 adults + 1 child (up to 17) + 1 infant (up to 2); confirm age rules in your quote",
+    "detail": "A ground-floor room with a lounge area and a private terrace facing the beach. The bathroom has a bath, shower and separate toilet.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-beachfront",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Superior Beachfront",
+        "room": "Superior Beachfront",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/superior-beachfront-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-beachfront",
+        "note": ""
+      },
+      {
+        "name": "Superior Beachfront - additional view",
+        "room": "Superior Beachfront",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/superior-beachfront-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-beachfront",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Superior Beachfront floor plan",
+        "room": "Superior Beachfront",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/superior-beachfront-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/superior-beachfront",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Suite",
+    "size": "75",
+    "capacity": "2 adults",
+    "detail": "A rooftop retreat overlooking Grand Baie, with a lounge and a terrace with a private pool and outdoor shower.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/suite",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Suite",
+        "room": "Suite",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/suite-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/suite",
+        "note": ""
+      },
+      {
+        "name": "Suite - additional view",
+        "room": "Suite",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/suite-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/suite",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Suite floor plan",
+        "room": "Suite",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/suite-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/suite",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "2-Bedroom Family Apartment",
+    "size": "70",
+    "capacity": "5 people; confirm the adult/child combination with Dirk",
+    "detail": "Two bedrooms and two bathrooms in the garden village accommodation area, which has a shared pool.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/2-bedroom-family-apartment",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "2-Bedroom Family Apartment",
+        "room": "2-Bedroom Family Apartment",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/2-bedroom-family-apartment-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/2-bedroom-family-apartment",
+        "note": ""
+      },
+      {
+        "name": "2-Bedroom Family Apartment - additional view",
+        "room": "2-Bedroom Family Apartment",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/2-bedroom-family-apartment-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/2-bedroom-family-apartment",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "2-Bedroom Family Apartment floor plan",
+        "room": "2-Bedroom Family Apartment",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/2-bedroom-family-apartment-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/2-bedroom-family-apartment",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Loft",
+    "size": "70",
+    "capacity": "5 people; confirm the adult/child combination with Dirk",
+    "detail": "Bedrooms on different levels, with the main bedroom upstairs. The second bedroom has three single beds and its own shower bathroom.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/loft",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Loft",
+        "room": "Loft",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/loft-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/loft",
+        "note": ""
+      },
+      {
+        "name": "Loft - additional view",
+        "room": "Loft",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/loft-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/loft",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Loft floor plan",
+        "room": "Loft",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/loft-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/loft",
+        "note": "Supplier illustration of the parents bedroom; not a complete two-level layout."
+      }
+    ]
+  },
+  {
+    "name": "Villa",
+    "size": "160",
+    "capacity": "5 people; confirm the adult/child combination with Dirk",
+    "detail": "A two-bedroom villa in a quiet part of the village, with a terrace, garden and private pool.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/villa",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee",
+      "In-room safe"
+    ],
+    "photos": [
+      {
+        "name": "Villa",
+        "room": "Villa",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/villa-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/villa",
+        "note": ""
+      },
+      {
+        "name": "Villa - additional view",
+        "room": "Villa",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/villa-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/villa",
+        "note": ""
+      }
+    ],
+    "plans": [
+      {
+        "name": "Villa floor plan",
+        "room": "Villa",
+        "category": "plan",
+        "src": "/static/resorts/mau/rooms/villa-plan.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/villa",
+        "note": "Supplier layout illustration; confirm your allocated room."
+      }
+    ]
+  },
+  {
+    "name": "Pool Apartment",
+    "size": "160",
+    "capacity": "5 people; confirm the adult/child combination with Dirk",
+    "detail": "A ground-floor, two-bedroom apartment with a master en-suite, lounge, terrace and private garden pool.",
+    "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/pool-apartment",
+    "reviewed": "2026-10-08",
+    "amenities": [
+      "Air conditioning",
+      "Wi-Fi",
+      "Satellite TV",
+      "Hairdryer",
+      "Minibar; complimentary tea and coffee"
+    ],
+    "photos": [
+      {
+        "name": "Pool Apartment",
+        "room": "Pool Apartment",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/pool-apartment-0.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/pool-apartment",
+        "note": ""
+      },
+      {
+        "name": "Pool Apartment - additional view",
+        "room": "Pool Apartment",
+        "category": "room",
+        "src": "/static/resorts/mau/rooms/pool-apartment-1.jpg",
+        "source": "https://www.beachcomber-hotels.com/en/hotel/mauricia-beachcomber/room/pool-apartment",
+        "note": ""
+      }
+    ],
+    "plans": []
+  }
+]

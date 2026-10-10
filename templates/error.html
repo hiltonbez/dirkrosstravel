@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block title %}{{ error.code }}{% endblock %}{% block content %}<section class="container section narrow"><p class="eyebrow">{{ error.code }}</p><h1>{{ error.name }}</h1><p>{{ error.description }}</p><a class="button" href="{{ url_for('public.home') }}">Back to the homepage</a></section>{% endblock %}

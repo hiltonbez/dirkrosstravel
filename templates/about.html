@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% macro photo(name, alt, eager=false, css='') %}
+<img class="{{ css }}" src="{{ url_for('static', filename='images/about/' ~ name ~ '-960.webp') }}"
+     srcset="{{ url_for('static', filename='images/about/' ~ name ~ '-480.webp') }} 480w, {{ url_for('static', filename='images/about/' ~ name ~ '-960.webp') }} 960w, {{ url_for('static', filename='images/about/' ~ name ~ '-1600.webp') }} 1600w"
+     sizes="{{ '100vw' if eager else '(max-width: 700px) 100vw, 50vw' }}" width="960" height="1280"
+     alt="{{ alt }}" loading="{{ 'eager' if eager else 'lazy' }}" {% if eager %}fetchpriority="high"{% endif %} decoding="async">
+{% endmacro %}
+{% macro section_copy(key) %}{{ site.get(key, about_defaults[key])|profile_markdown }}{% endmacro %}
+{% macro actions() %}
+<div class="about-cta-actions">
+  <a class="button" href="{{ url_for('public.contact', interest='travel') }}">Start planning my holiday <i data-lucide="arrow-right"></i></a>
+  {% if site.get('whatsapp_number') %}<a class="button secondary" href="https://wa.me/{{ site.whatsapp_number }}" target="_blank" rel="noopener">WhatsApp Dirk <i data-lucide="message-circle"></i></a>{% endif %}
+</div>
+{% endmacro %}
+{% block document_title %}{{ page.title }}{% endblock %}
+{% block description %}{{ site.get('about_meta_description', '') }}{% endblock %}
+{% block seo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<link rel="canonical" href="{{ url_for('public.page', slug='about', _external=True) }}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ site.get('about_meta_description', '') }}">
+<meta property="og:url" content="{{ url_for('public.page', slug='about', _external=True) }}">
+<meta property="og:image" content="{{ url_for('static', filename='images/about/dirk-profile-960.webp', _external=True) }}">
+<meta property="og:image:alt" content="Dirk Ross, independent travel advisor">
+<meta name="twitter:card" content="summary_large_image">
+{% set breadcrumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': url_for('public.home', _external=True)}, {'@type': 'ListItem', 'position': 2, 'name': 'About Dirk', 'item': url_for('public.page', slug='about', _external=True)}]} %}
+<script type="application/ld+json">{{ breadcrumbs|tojson }}</script>
+{% endblock %}
+{% block content %}
+<div class="about-redesign" itemscope itemtype="https://schema.org/ProfilePage">
+  <link itemprop="url" href="{{ url_for('public.page', slug='about', _external=True) }}">
+  <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
+    <link itemprop="image" href="{{ url_for('static', filename='images/about/dirk-profile-960.webp', _external=True) }}">
+    <section class="about-photo-hero" aria-labelledby="dirk-heading">
+      {{ photo('dirk-profile', 'Dirk Ross smiling in front of a red travel display', true, 'about-hero-image') }}
+      <div class="container about-hero-inner"><div class="about-hero-copy">
+        <p class="eyebrow">YOUR HOLIDAY. A PERSONAL CONNECTION.</p>
+        <h1 id="dirk-heading" itemprop="name">{{ site.get('advisor_name', 'Dirk Ross') }}</h1>
+        <p class="about-hero-role" itemprop="jobTitle">Independent travel advisor</p>
+        <p class="about-hero-summary" itemprop="description">{{ site.get('advisor_summary', '') }}</p>
+        {{ actions() }}
+      </div></div>
+    </section>
+    <div class="about-trust-strip"><div class="container about-trust-inner">
+      <div><strong>{{ site.get('advisor_experience', '20+ years') }}</strong><span>Travel industry experience</span></div>
+      <div itemprop="affiliation" itemscope itemtype="https://schema.org/Organization"><strong itemprop="name">Flight Centre Independent</strong><span itemprop="parentOrganization" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Flight Centre Travel Group</span></span></div>
+      <div><strong>{{ site.get('advisor_city', 'Johannesburg') }}</strong><span>Serving {{ site.get('advisor_service_area', 'Fourways and Johannesburg') }}</span></div>
+    </div></div>
+    <section class="container section about-meet">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ url_for('public.home') }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">About Dirk</span></nav>
+      <div class="about-editorial-copy">{{ page.body|profile_markdown }}</div>
+      <p class="about-signoff">Personal advice. Thoughtful planning. Your kind of holiday.</p>
+    </section>
+    <section class="about-benefit-band"><div class="container section about-benefits about-editorial-copy">{{ section_copy('about_benefits') }}</div></section>
+    <section class="container section about-mauritius-layout">
+      <div class="about-editorial-copy"><p class="eyebrow">THE RIGHT RESORT, NOT JUST A STAR RATING</p>{{ section_copy('about_mauritius') }}
+        <a class="text-link" href="{{ url_for('public.resort_finder') }}">Find my Mauritius resort <i data-lucide="arrow-right"></i></a>
+        <a class="text-link" href="{{ url_for('public.resorts') }}">Explore Beachcomber resorts <i data-lucide="arrow-up-right"></i></a>
+      </div>
+      <figure class="about-resort-photo"><img src="{{ url_for('static', filename='images/resort-1.jpg') }}" alt="Beachcomber Mauritius resort setting" width="800" height="600" loading="lazy" decoding="async"><figcaption>Explore the Beachcomber collection in Mauritius.</figcaption></figure>
+    </section>
+    <section class="about-ideas-band"><div class="container section about-ideas about-editorial-copy">{{ section_copy('about_expertise') }}<a class="text-link" href="{{ url_for('public.contact', interest='travel') }}">Talk to Dirk about your travel ideas <i data-lucide="arrow-right"></i></a></div></section>
+    <section class="container section about-journey about-editorial-copy">{{ section_copy('about_process') }}</section>
+    <section class="about-travel-band"><div class="container section">
+      <div class="about-editorial-copy about-travel-intro">{{ section_copy('about_travel') }}</div>
+      <div class="about-travel-pair">
+        <figure>{{ photo('seychelles-sunset', 'Dirk on a beach at sunset, from his supplied Seychelles travel photographs') }}<figcaption><span>Seychelles</span>A sunset worth pausing for.</figcaption></figure>
+        <figure>{{ photo('zanzibar-waterfront', 'Dirk standing beside historic cannons on the Zanzibar waterfront') }}<figcaption><span>Zanzibar</span>A different view of island life.</figcaption></figure>
+      </div>
+    </div></section>
+    <section class="container section about-reviews" aria-labelledby="reviews-heading">
+      <p class="eyebrow">CLIENT EXPERIENCES</p>
+      <h2 id="reviews-heading">Trusted by my travellers</h2>
+      <p class="about-reviews-intro">Personal help, thoughtful arrangements and less travel stress: these are the details clients value. Here is a small selection of their feedback.</p>
+      {% if reviews['items'] %}<div class="about-review-grid">
+        {% for review in reviews['items'] %}<figure class="about-review">
+          <h3>{{ review.theme }}</h3><p class="about-review-context">{{ review.context }}</p>
+          <blockquote cite="{{ review.url }}"><p>&ldquo;... {{ review.quote }}{{ '' if review.quote.endswith(('.', '!', '?')) else ' ...' }}&rdquo;</p></blockquote>
+          <figcaption><strong>{{ review.name }}</strong><a href="{{ review.url }}" target="_blank" rel="noopener noreferrer">{{ review.source }} <i data-lucide="arrow-up-right"></i></a></figcaption>
+        </figure>{% endfor %}
+      </div>{% endif %}
+      <div class="about-review-links">
+        {% if reviews.show_rating %}<p>{{ reviews.rating }}/5 on Google &middot; {{ reviews.count }} reviews <small>Checked {{ reviews.checked }}</small></p>{% endif %}
+        <a class="text-link" href="{{ reviews.google_url }}" target="_blank" rel="noopener noreferrer">Read my Google reviews <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </section>
+    <section class="container section about-affiliation-section"><p class="eyebrow">PERSONAL SERVICE, PROFESSIONAL CONNECTION</p><h2>Independent, with a Flight Centre connection.</h2><p>I am an independent travel agent affiliated with Flight Centre Independent, part of the Flight Centre Travel Group. My connections to ASATA and IATA are through my Flight Centre affiliation.</p></section>
+    <section class="about-final-band"><div class="container section">
+      <div class="about-editorial-copy">{{ section_copy('about_final') }}</div>{{ actions() }}
+      <div class="about-contact-details"><div>
+        {% if site.get('contact_email') %}<a class="about-contact-link" itemprop="email" href="mailto:{{ site.contact_email }}"><i data-lucide="mail"></i>{{ site.contact_email }}</a>{% endif %}
+        {% if site.get('contact_phone') %}<a class="about-contact-link" href="tel:{{ site.get('contact_phone_international', '') }}"><i data-lucide="phone"></i><meta itemprop="telephone" content="{{ site.get('contact_phone_international', '') }}">{{ site.contact_phone }}</a>{% endif %}
+      </div><address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">{{ site.get('advisor_street', '') }}</span><br><span itemprop="addressLocality">{{ site.get('advisor_city', '') }}</span> <span itemprop="postalCode">{{ site.get('advisor_postcode', '') }}</span><br><span itemprop="addressCountry">{{ site.get('advisor_country', '') }}</span></address></div>
+    </div></section>
+  </article>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% macro package_card(package, rate_price, resort_link=false) %}
+{% set photo = resort_photo(package.resort) %}
+{% set destination = url_for('public.resort_detail', slug=package.resort.slug) if resort_link else url_for('public.package_detail', item_id=package.id) %}
+{% set resort_destination = url_for('public.resort_detail', slug=package.resort.slug) %}
+<article class="package-card">
+  <a class="card-photo" href="{{ resort_destination }}"><img src="{{ photo.src if photo else package.resort.image_url }}" alt="{{ package.resort.name ~ ': ' ~ photo.name if photo else package.resort.name ~ ' holiday inspiration' }}" loading="lazy" width="600" height="400"><span class="photo-tag">{{ package.category }}</span></a>
+  <div class="card-body"><p class="eyebrow">{{ package.resort.location }}</p><h3><a href="{{ resort_destination }}">{{ package.resort.name }}</a></h3>
+  <p>{{ package.nights }} nights · {{ package.meal_plan }}</p>
+  {% set price = rate_price(package) %}
+  {% if price %}<p class="price"><span>From</span> {{ price|money }} <small>per person sharing</small></p>{% else %}<p class="price"><span>Quote required</span><small>Tailored to your dates and party</small></p>{% endif %}
+  <a class="text-link" href="{{ destination }}">Explore this holiday <i data-lucide="arrow-right"></i></a></div>
+</article>
+{% endmacro %}
+{% macro enquiry_form(values={}, planning_summary='') %}
+<form method="post" action="{{ url_for('public.contact') }}" class="stack-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  {% if planning_summary|default('') %}<details class="brief-details" open><summary>Your attached travel brief</summary><pre>{{ planning_summary }}</pre></details>{% endif %}
+  {% if values.get('quote_id') %}<input type="hidden" name="quote_id" value="{{ values.quote_id }}">{% endif %}
+  <div class="form-row"><label>Your name<input name="name" autocomplete="name" maxlength="120" required value="{{ values.get('name', '') }}"></label><label>Email address<input type="email" name="email" autocomplete="email" maxlength="254" required value="{{ values.get('email', '') }}"></label></div>
+  <div class="form-row"><label>Phone number<input name="phone" autocomplete="tel" maxlength="40" value="{{ values.get('phone', '') }}"></label><label>Resort<input name="resort" maxlength="180" value="{{ values.get('resort', '') }}"></label></div>
+  <label>Your holiday plans<textarea name="message" rows="5" minlength="10" maxlength="5000" required>{{ values.get('message', '') }}</textarea></label>
+  <label class="check-label"><input type="checkbox" name="consent" required> I agree that Dirk may contact me about this enquiry.</label>
+  <button class="button" type="submit">Send enquiry <i data-lucide="arrow-right"></i></button>
+</form>
+{% endmacro %}

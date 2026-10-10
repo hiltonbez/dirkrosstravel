@@ -1,0 +1,15 @@
+{% from 'resort_media.html' import room_slide %}
+{% if research %}
+<section id="rooms" class="section"><div class="resort-room-band"><p class="eyebrow">COMPARE THE LAYOUT, NOT JUST THE NAME</p><div class="rooms-preview-heading"><h2 class="resort-icon-heading"><i data-lucide="bed-double" aria-hidden="true"></i>Rooms &amp; accommodation</h2>{% if room_photos %}<div class="rooms-preview-controls"><button type="button" data-room-prev aria-label="Previous room photographs" title="Previous room photographs"><i data-lucide="chevron-left"></i></button><button type="button" data-room-next aria-label="Next room photographs" title="Next room photographs"><i data-lucide="chevron-right"></i></button></div>{% endif %}</div>
+  {% if room_photos %}<div class="rooms-preview-track" tabindex="0" role="region" aria-label="{{ resort.name }} room photographs carousel">
+    {% for photo in room_photos %}{{ room_slide(photo, loop.index0, resort) }}{% endfor %}
+  </div><div class="rooms-preview-bottom"><p data-room-position aria-live="polite"></p><a class="button" href="#quote">Check rooms for my dates <i data-lucide="arrow-right"></i></a></div><p class="rooms-preview-note">Photographs may show different room categories or earlier interiors. Confirm your room category and layout in your quote.</p>{% endif %}
+  <details class="resort-details"><summary>Compare room sizes, occupancy &amp; layouts</summary>
+  <p>Occupancy limits below come from the official factsheet. Child ages, extra beds and interleading availability must match your written quote. Areas are approximate; unconfirmed sizes are marked.</p>
+  <div class="table-scroll resort-room-scroll" tabindex="0" role="region" aria-label="Room category comparison"><table class="resort-room-table"><caption>{{ resort.name }} room categories</caption><thead><tr><th scope="col">Room category</th><th scope="col">Maximum occupancy</th><th scope="col">Approx. area</th><th scope="col">Location &amp; layout</th></tr></thead><tbody>
+  {% for room in (room_details|map(attribute='facts')|select|list if resort.code == 'MAU' else research.rooms) %}<tr><th scope="row">{{ room.name }}</th><td>{{ room.capacity or 'Confirm with Dirk' }}</td><td>{{ room.size ~ ' sq m' if room.size else 'Confirm size' }}</td><td>{{ room.detail }}</td></tr>{% endfor %}
+  </tbody></table></div>
+  </details>
+  {% if not room_photos %}<a class="text-link" href="#quote">Check rooms for my dates <i data-lucide="arrow-right"></i></a>{% endif %}
+</div></section>
+{% endif %}

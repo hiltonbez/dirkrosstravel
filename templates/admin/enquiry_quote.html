@@ -1,0 +1,35 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<p><a class="text-link" href="{{ url_for('admin.enquiries') }}"><i data-lucide="arrow-left"></i>Back To Enquiries</a></p>
+<h1>Client's Original Quote</h1>
+<p>{{ enquiry.name }} · {{ enquiry.resort }}</p>
+{% if quote %}
+<div class="flash" role="note"><strong>Historical Rate - Not A Current Offer</strong><p>This is the saved API response from the client's original search. No new prices have been requested. Prices, availability and on-request status must be reconfirmed before booking.</p></div>
+<h2>{{ result.get('hotelName') or enquiry.resort or 'Resort Quote' }}</h2>
+<p><strong>Supplier reference:</strong> {{ result.get('quoteRef') or 'Not supplied' }}<br>
+<strong>Originally generated:</strong> {{ quote.created.strftime('%d %b %Y, %H:%M') }} UTC<br>
+<strong>Original quote valid until:</strong> {{ quote.expires.strftime('%d %b %Y, %H:%M') }} UTC<br>
+<strong>Travel dates:</strong> {{ (result.get('travelFromDate') or quote.request.get('dateDeparture') or '')[:10] }} to {{ (result.get('travelToDate') or quote.request.get('dateReturn') or '')[:10] }}<br>
+<strong>Departure:</strong> {{ quote.request.get('departureCity', 'Not recorded') }}<br>
+<strong>Travellers:</strong> {{ quote.request.get('nbrAdults', 'Not recorded') }} adults, {{ quote.request.get('nbrChildren', 'Not recorded') }} children, {{ quote.request.get('nbrInfants', 'Not recorded') }} infants</p>
+<p class="muted">All room and meal-plan options returned in this saved quote are shown below. The client's room interest is recorded in their enquiry.</p>
+<p class="page-body">{{ enquiry.message }}</p>
+{% for room in result.get('roomOptions', []) %}
+<article class="enquiry-row">
+  <h2>{{ room.get('accomProductName') or 'Room Option' }}</h2>
+  <p><strong>Status At Time Of Quote:</strong> {{ room.get('roomStatus') or 'Not supplied' }} · {{ room.get('numberOfNights', '') }} nights</p>
+  {% if room.get('accomProdDescription') %}<p>{{ room.accomProdDescription|plain }}</p>{% endif %}
+  {% if room.get('roomAllocation') %}<p>{{ room.roomAllocation|plain }}</p>{% endif %}
+  <div class="table-scroll"><table><thead><tr><th>Meal Plan</th><th>Original Total Package From</th><th>Original Per Person From</th></tr></thead><tbody>
+  {% for option in room.get('packages', []) %}<tr><td>{{ option.get('packageDesc', '')|plain }}</td><td>{{ option.get('packagePriceZARFrom')|money }}</td><td>{{ option.get('pricePerPersonZARFrom')|money }}</td></tr>{% else %}<tr><td colspan="3">No package rates were saved for this room.</td></tr>{% endfor %}
+  </tbody></table></div>
+  {% if room.get('importantNotes') %}<p>{{ room.importantNotes|plain }}</p>{% endif %}
+</article>
+{% else %}<p>No room options were returned in the saved API response.</p>{% endfor %}
+{% if result.get('airGDS') %}<h2>Original Flight Options</h2><div class="table-scroll"><table><thead><tr><th>Flight</th><th>Route</th><th>Departure</th><th>Arrival</th></tr></thead><tbody>{% for flight in result.airGDS %}<tr><td>{{ flight.get('carrier', '') }} {{ flight.get('flightRefNr', '') }}</td><td>{{ flight.get('fromArpt', '') }} to {{ flight.get('toArpt', '') }}</td><td>{{ flight.get('depDateTime', '') }}</td><td>{{ flight.get('arrDateTime', '') }}</td></tr>{% endfor %}</tbody></table></div>{% endif %}
+{% if result.get('includeTransfers') %}<p><strong>Transfers:</strong> {{ result.get('transferType', '') }}</p>{% endif %}
+{% for field, heading in [('inclusions','Original Inclusions'),('exclusions','Original Exclusions'),('termsAndConditions','Original Supplier Terms')] %}{% if result.get(field) %}<details class="supplier-details"><summary>{{ heading }}</summary><ul>{% for line in result[field] %}<li>{{ line|plain }}</li>{% endfor %}</ul></details>{% endif %}{% endfor %}
+{% else %}
+<div class="empty-state"><h2>Original Quote Unavailable</h2><p>No saved API response is available for this enquiry. An original rate cannot be reconstructed from the reference alone.</p></div>
+{% endif %}
+{% endblock %}

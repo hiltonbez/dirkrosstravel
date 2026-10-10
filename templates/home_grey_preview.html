@@ -1,0 +1,7 @@
+{% extends 'home.html' %}
+{% block title %}Home Page Preview{% endblock %}
+{% block seo %}
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="{{ url_for('static', filename='home-grey-preview.css') }}">
+{% endblock %}
+{% block home_layout_class %}home-grey-preview{% endblock %}

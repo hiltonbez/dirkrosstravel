@@ -1,0 +1,154 @@
+.resort-resource{letter-spacing:0;--resort-gutter:32px;--resort-divider-space:32px}
+.resort-resource .container.section:has(>.resort-media-band,>.resort-room-band,>.seasonal-glance-grid){position:relative;padding-block:var(--resort-divider-space)}
+.resort-resource .container.section:has(>.resort-media-band,>.resort-room-band,>.seasonal-glance-grid)::before{content:"";position:absolute;top:0;left:var(--resort-gutter);right:var(--resort-gutter);border-top:1px solid var(--line);pointer-events:none}
+.resort-package-band>.container.section{padding-bottom:var(--resort-divider-space)}
+.resort-resource #quote.section,.resort-resource #rooms.section{padding-block:var(--resort-divider-space)}
+.resort-resource #rooms.section{position:relative}
+.resort-resource #rooms.section::before{content:"";position:absolute;top:0;left:0;right:0;border-top:1px solid var(--line);pointer-events:none}
+.resort-resource #rooms+.seasonal-family{position:relative;margin-top:var(--resort-divider-space)}
+.resort-resource #rooms+.seasonal-family::before{content:"";position:absolute;top:calc(-1 * var(--resort-divider-space));left:0;right:0;border-top:1px solid var(--line);pointer-events:none}
+@media(max-width:800px){.resort-resource{--resort-gutter:22px;--resort-divider-space:24px}}
+.resort-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:20px 0}
+.resort-photo-grid figure{margin:0;min-width:0}
+#photos .resort-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){#photos .resort-photo-grid{grid-template-columns:1fr}}
+.resort-photo-link{position:relative;display:block;aspect-ratio:3/2;background:#edf2f2;overflow:hidden}
+.resort-photo-link img{width:100%;height:100%;object-fit:cover;display:block}
+.resort-plan-link img{object-fit:contain}
+.resort-plan-link{aspect-ratio:1; background:#fff;border:1px solid var(--line)}
+.resort-photo-grid figcaption{font-size:14px;line-height:1.5;margin-top:10px;overflow-wrap:anywhere}
+.resort-photo-grid figcaption small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.resort-media-credit{font-size:11px;color:var(--muted);margin:10px 0 28px}
+.resort-details{border-block:1px solid var(--line);padding:18px 0;margin-bottom:22px}
+.resort-details summary{font-weight:600;font-size:18px;cursor:pointer}
+.resort-details[open] summary{margin-bottom:24px}
+.resort-viewer{width:min(1100px,94vw);max-width:94vw;max-height:94dvh;padding:18px;border:0;border-radius:6px;background:#fff;color:#202b2c;overflow:auto}
+.resort-viewer::backdrop{background:rgba(0,0,0,.8)}
+.resort-viewer-toolbar{display:flex;justify-content:space-between;align-items:center}
+.resort-viewer button{width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;border:1px solid #d9dfe0;background:#fff;color:#202b2c;border-radius:4px;cursor:pointer;padding:8px}
+.resort-viewer-stage{display:flex;align-items:center;gap:12px;min-height:160px;margin:12px 0}
+.resort-viewer-stage img{width:calc(100% - 112px);height:65dvh;object-fit:contain;min-width:0}
+.resort-viewer p{margin:8px 0;font-size:14px;line-height:1.5}
+.resort-viewer small{font-size:11px}
+@media(max-width:900px){.resort-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.resort-photo-grid{grid-template-columns:1fr;gap:20px}.resort-viewer{padding:10px}.resort-viewer-stage{gap:4px}.resort-viewer-stage img{width:calc(100% - 96px);height:55dvh}.resort-details summary{font-size:16px}}
+.resort-resource h2{font-size:30px;line-height:1.3;margin:0 0 22px}
+.resort-resource h3{font-size:19px;line-height:1.4;margin:0 0 12px}
+.resort-resource p{line-height:1.75;max-width:850px}
+.resort-hero{position:relative;isolation:isolate;min-height:400px;padding:46px 0;color:#fff;background:#244848}
+.resort-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.resort-hero:after{content:"";position:absolute;inset:0;background:rgba(16,36,36,.66);z-index:-1}
+.resort-hero h1{font-size:44px;line-height:1.15;max-width:850px;margin:12px 0 18px;letter-spacing:0}
+.resort-hero .eyebrow{color:#fff}
+.resort-positioning{font-size:19px;max-width:740px!important}
+.resort-best-for{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;padding:0;margin:20px 0;font-size:14px;font-weight:600}
+.resort-best-for li{border-left:2px solid #fff;padding-left:12px}
+.resort-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.resort-hero .secondary{background:#fff;color:var(--ink)}
+.resort-photo-caption{font-size:11px;color:var(--muted);padding-top:10px;margin-bottom:0}
+.resort-jump-nav{border-bottom:1px solid var(--line);border-top:1px solid var(--line);background:#fff}
+.resort-jump-nav>div{display:flex;flex-wrap:wrap;gap:8px 25px;padding-top:16px;padding-bottom:16px;font-size:13px}
+.resort-jump-nav a:hover{text-decoration:underline;color:var(--red)}
+.resort-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 48px;margin:0;background:#eef0f2;padding:36px}
+.resort-facts>div{position:relative;padding-left:46px;min-width:0}
+.resort-facts dt{font-size:21px;font-weight:700;line-height:1.5;margin-bottom:12px}
+.resort-facts dt svg{position:absolute;left:0;top:3px;width:28px;height:28px}
+.resort-facts dd{font-size:15px;line-height:1.75;color:#667981;margin:0;overflow-wrap:anywhere}
+@media(max-width:700px){#facts .resort-facts{grid-template-columns:1fr;padding:26px 22px;gap:28px}#facts .resort-facts dt{font-size:19px}#facts .resort-facts dd{font-size:15px}}
+.resort-soft-band{background:#fff}
+.resort-two-columns,.resort-why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:60px}
+.resort-advisor{border-left:3px solid var(--red);padding-left:28px}
+.resort-room-table{min-width:650px}
+.resort-room-table caption{text-align:left;padding:0 0 16px;font-size:13px;color:var(--muted)}
+.resort-room-table th[scope=row]{background:#fff;color:var(--ink);font-size:14px;max-width:230px}
+.resort-room-table td{line-height:1.6}
+.resort-room-scroll{margin-bottom:22px}
+.resort-dining-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 40px}
+.resort-dining-grid>div{border-top:1px solid var(--line);padding-top:16px}
+.resort-dining-grid p{font-size:14px;margin-bottom:0}
+.resort-meal-plan{border-top:1px solid var(--line);margin-top:28px;padding-top:26px}
+.resort-source-note{border-top:1px solid var(--line);padding-top:18px;margin-top:24px;font-size:12px;color:var(--muted);line-height:1.7}
+.resort-source-note a{font-size:11px;text-decoration:underline}
+.resort-package-band{background:#fff}
+.resort-offer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;border-bottom:1px solid #d5e5e2;padding:24px 0}
+.resort-offer h3{font-size:22px}
+.resort-offer p{font-size:14px;margin-bottom:10px}
+.resort-offer .price{font-size:25px}
+.resort-offer .price small{font-size:12px;display:block}
+.resort-alternatives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:24px 0}
+.resort-alternatives article{border-top:2px solid var(--sea);padding-top:18px}
+.resort-alternatives p{font-size:14px}
+.resort-faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.resort-faq summary{font-weight:600;cursor:pointer;font-size:16px}
+.resort-faq details p{margin:18px 0 0;font-size:15px}
+.resort-notice{margin-top:25px;border-left:3px solid var(--red);background:#fff0f2;padding-top:15px;padding-bottom:15px}
+.resort-notice p{font-size:14px;margin:5px 0 0}
+.resort-resource section[id]{scroll-margin-top:100px}
+.seasonal-offers{border-bottom:1px solid var(--line);padding-bottom:var(--resort-divider-space);margin-bottom:var(--resort-divider-space)}
+.seasonal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}
+.seasonal-intro{display:flex;justify-content:space-between;gap:32px;align-items:flex-start;margin:30px 0}
+.seasonal-intro h3{font-size:28px;margin:6px 0 12px}
+.seasonal-glance{margin:30px 0}
+.resort-resource .resort-info-grid h2,.resort-resource .resort-info-grid h3{font-size:21px;line-height:1.5;margin:0 0 12px;font-weight:700}
+.resort-info-grid p+p{margin-top:16px}
+.resort-info-grid .text-link{margin-top:18px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap}
+.resort-info-grid .text-link svg{width:20px;height:20px;margin:0}
+.resort-icon-heading{display:flex;align-items:center;gap:18px}
+.resort-icon-heading svg{width:28px;height:28px;flex-shrink:0}
+.resort-media-band,.resort-room-band{background:#eef0f2;padding:36px}
+.resort-media-band .resort-photo-grid{margin:0}
+.resort-headed-panel>.seasonal-glance-grid{padding:0;background:transparent}
+.resort-panel-note{margin:24px 0 0}
+.resort-panel-link{display:inline-flex;margin-top:24px}
+#facts .resort-facts{padding:0;background:transparent}
+.resort-map-band img{display:block;width:100%;height:auto;object-fit:contain}
+.resort-map-band img+img{margin-top:24px}
+.resort-map-band img.resort-location-map{max-width:366px;margin-inline:auto;background:#fff}
+#rooms .resort-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.resort-info-grid.resort-offer,.resort-info-grid.seasonal-family,.resort-info-grid.resort-why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 48px;padding:36px;border:0;align-items:start}
+.resort-info-grid.resort-offer{position:relative;margin:0}
+.resort-info-grid.resort-offer+.resort-info-grid.resort-offer{margin-top:calc(2 * var(--resort-divider-space))}
+.resort-info-grid.resort-offer+.resort-info-grid.resort-offer::before{content:"";position:absolute;top:calc(-1 * var(--resort-divider-space));left:0;right:0;border-top:1px solid var(--line);pointer-events:none}
+.resort-info-grid.resort-offer .button{margin-top:18px}
+.resort-info-grid .eyebrow{font-size:11px;color:var(--sea);margin-bottom:10px}
+.resort-info-grid.resort-offer .price{color:var(--ink);font-size:25px;font-weight:700;margin-bottom:14px}
+.resort-info-grid.resort-offer .price small{font-weight:400;color:#667981}
+@media(max-width:700px){.resort-info-grid.resort-offer,.resort-info-grid.seasonal-family,.resort-info-grid.resort-why{grid-template-columns:1fr;padding:26px 22px;gap:28px}.resort-media-band,.resort-room-band{padding:26px 22px}#rooms .resort-photo-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.resort-resource .resort-info-grid h2,.resort-resource .resort-info-grid h3{font-size:19px}}
+.seasonal-glance-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:22px}.seasonal-glance-heading h3{font-size:30px;margin:0;line-height:1.3}.seasonal-glance-heading label{font-size:12px;min-width:240px}.seasonal-glance-heading select{font-size:13px;margin-top:6px}
+.seasonal-glance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 48px;background:#eef0f2;padding:36px}
+.seasonal-glance-grid>div{display:flex;gap:18px;align-items:flex-start;min-width:0}.seasonal-glance-grid svg{width:28px;height:28px;flex-shrink:0;margin-top:3px}.seasonal-glance-grid h4{font-size:21px;line-height:1.5;margin:0 0 12px}.seasonal-glance-grid p{font-size:15px;line-height:1.75;color:#667981;margin:0}.seasonal-glance-note{font-size:11px;color:#71818a;line-height:1.7;margin-top:12px}
+@media(max-width:700px){.seasonal-glance-heading{flex-direction:column;align-items:flex-start}.seasonal-glance-heading h3{font-size:26px}.seasonal-glance-heading label{width:100%;min-width:0}.seasonal-glance-grid{grid-template-columns:1fr;padding:26px 22px;gap:28px}.seasonal-glance-grid h4{font-size:19px}}
+.seasonal-intro>div:first-child{max-width:610px}
+.seasonal-trip-facts{display:flex;flex-direction:column;gap:12px;padding-top:10px;flex-shrink:0;font-size:13px}
+.seasonal-trip-facts span{display:flex;gap:10px;align-items:center}.seasonal-trip-facts svg{width:17px;height:17px;color:var(--sea)}
+.seasonal-filters{display:flex;gap:4px;flex-wrap:wrap;margin:24px 0}
+.seasonal-filters button{font:inherit;font-size:13px;font-weight:600;border:1px solid #d6dfe2;border-radius:4px;background:#fff;color:#344047;padding:10px 16px;cursor:pointer}
+.seasonal-filters button[aria-pressed=true]{background:#243238;border-color:#243238;color:#fff}
+.seasonal-offer{border:1px solid #dae2e5;border-radius:6px;overflow:hidden;background:#fff;min-width:0;display:flex;flex-direction:column}
+.seasonal-offer[hidden],.seasonal-offer [hidden]{display:none!important}
+.seasonal-photo{display:block;position:relative;aspect-ratio:3/2;background:#eaf0f2;overflow:hidden}
+.seasonal-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:filter .2s}
+.seasonal-photo:hover img{filter:brightness(1.04)}
+.seasonal-photo span{position:absolute;left:12px;bottom:12px;right:12px;width:fit-content;max-width:calc(100% - 24px);background:#fff;color:#253137;font-size:12px;font-weight:700;padding:7px 10px;border-radius:3px}
+.seasonal-card-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.seasonal-offer h4{font-size:18px;margin:0 0 18px;line-height:1.45}
+.seasonal-offer p{font-size:13px;line-height:1.65}
+.seasonal-price{min-height:265px;flex:1}
+.seasonal-availability{font-size:11px!important;line-height:1.5!important;background:#f1f4f5;color:#53636a;padding:7px 10px;border-radius:3px;margin-bottom:18px!important}
+.seasonal-offer[data-price-state=priced] .seasonal-availability{background:#eaf5ee;color:#23613e}
+.seasonal-offer[data-availability=request] .seasonal-availability{background:#fff4dc;color:#745313}
+.seasonal-offer .price{font-size:30px;line-height:1.25;font-weight:700;margin:0 0 3px}
+.seasonal-offer .seasonal-price-basis{color:var(--muted);margin:0 0 12px;font-size:12px}
+.seasonal-total{font-size:12px!important;margin-bottom:16px;color:#54646d}
+.seasonal-room{border-top:1px solid #edf0f1;padding-top:12px;margin-top:16px}.seasonal-room p{margin:0 0 5px}.seasonal-room p:first-child{font-weight:600}
+.seasonal-offer .button{font-size:13px;white-space:normal;display:flex;justify-content:space-between;width:100%;gap:12px}
+.seasonal-price-details{border-top:1px solid #edf0f1;margin-top:16px;padding-top:12px}.seasonal-price-details summary{cursor:pointer;font-size:11px;color:#667781}.seasonal-price-details p{font-size:11px;margin:12px 0 0}
+.seasonal-photo-credit{font-size:10px;color:#68767e}
+.seasonal-help h5{font-size:21px;line-height:1.4;margin:20px 0 12px}.seasonal-help p{color:#61717a}
+.seasonal-family{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-top:24px}.seasonal-family h4{font-size:21px;margin:0 0 8px}.seasonal-family p{margin:0;font-size:14px}
+@media(max-width:1000px){.seasonal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.seasonal-intro{flex-direction:column;gap:12px}.seasonal-trip-facts{flex-direction:row;flex-wrap:wrap;gap:12px 18px}.seasonal-intro h3{font-size:25px}.seasonal-family{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.seasonal-grid{grid-template-columns:1fr}.seasonal-filters button{padding:10px 12px;font-size:12px}}
+@media(max-width:1000px){.resort-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.resort-two-columns,.resort-why{gap:32px}.resort-dining-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.resort-hero{min-height:420px;padding:32px 0}.resort-hero h1{font-size:32px}.resort-positioning{font-size:17px}.resort-resource h2{font-size:25px}.resort-facts{gap:22px 18px}.resort-facts dd{font-size:13px}.resort-two-columns,.resort-why,.resort-dining-grid,.resort-alternatives{grid-template-columns:1fr;gap:26px}.resort-advisor{padding-left:20px}.resort-offer{grid-template-columns:1fr;gap:10px}.resort-offer>.button{justify-self:start}.resort-actions{gap:14px}.resort-actions .button{font-size:13px}.resort-jump-nav>div{gap:10px 20px}.resort-best-for{gap:10px 18px;font-size:12px}.resort-resource .section-heading{align-items:flex-start;flex-direction:column;gap:14px}.resort-notice{margin-left:20px;margin-right:20px;width:auto}}

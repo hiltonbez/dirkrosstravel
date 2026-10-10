@@ -1,0 +1,24 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<h1>Reviews &amp; testimonials</h1>
+<form method="post" class="stack-form editor-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <h2>Google Business Profile</h2>
+  <label>Public profile link<input type="url" name="google_url" value="{{ values.google_url }}" required maxlength="1000"></label>
+  <label>Verified rating (leave blank until checked)<input type="number" name="rating" min="1" max="5" step="0.1" value="{{ values.rating }}"></label>
+  <label>Verified review count<input type="number" name="count" min="1" step="1" value="{{ values.count }}"></label>
+  <label>Live Google listing checked on (rating expires after 30 days)<input type="date" name="checked" value="{{ values.checked }}"></label>
+  {% for index in range(5) %}{% set item = values['items'][index] if index < values['items']|length else {} %}
+  <fieldset><legend>Testimonial {{ index + 1 }}</legend>
+    <label>Source<select name="{{ index }}_source">{% for source in ['Website testimonial', 'Google review'] %}<option {% if item.get('source', 'Website testimonial') == source %}selected{% endif %}>{{ source }}</option>{% endfor %}</select></label>
+    <label>Customer name<input name="{{ index }}_name" value="{{ item.get('name','') }}" maxlength="100"></label>
+    <label>Theme<input name="{{ index }}_theme" value="{{ item.get('theme','') }}" maxlength="100"></label>
+    <label>Context (editorial, not part of the quotation)<input name="{{ index }}_context" value="{{ item.get('context','') }}" maxlength="250"></label>
+    <label>Exact authorised review excerpt<textarea name="{{ index }}_quote" maxlength="1200" rows="4">{{ item.get('quote','') }}</textarea></label>
+    <label>Original review or reviewer profile link<input type="url" name="{{ index }}_url" value="{{ item.get('url','') }}" maxlength="1000"></label>
+    <label><input type="checkbox" name="{{ index }}_published" {% if item.get('published') %}checked{% endif %}> Approved for publication</label>
+  </fieldset>
+  {% endfor %}
+  <button class="button" type="submit"><i data-lucide="save"></i>Save testimonials</button>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<h1>Site settings</h1>
+<form method="post" class="stack-form editor-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  {% for key,label in fields %}
+  <label>{{ label }}
+    {% if key in ['about_text', 'about_benefits', 'about_mauritius', 'about_expertise', 'about_process', 'about_travel', 'about_final'] %}
+    <textarea name="{{ key }}" rows="{{ 7 if key != 'about_text' else 4 }}" maxlength="{{ 4000 if key != 'about_text' else 500 }}">{{ site.get(key,'') }}</textarea>
+    {% else %}<input name="{{ key }}" value="{{ site.get(key,'') }}" maxlength="500">{% endif %}
+  </label>
+  {% endfor %}
+  <button type="submit" class="button"><i data-lucide="save"></i>Save settings</button>
+</form>
+{% endblock %}

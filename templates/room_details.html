@@ -1,0 +1,13 @@
+{% for detail in room_details %}
+<dialog class="room-detail-dialog" id="room-detail-{{ detail.id }}" aria-labelledby="room-title-{{ detail.id }}">
+  <header><div><p class="eyebrow">{{ resort.name }}</p><h2 id="room-title-{{ detail.id }}">{{ detail.name }}</h2></div><button type="button" data-room-close title="Close room details" aria-label="Close room details"><i data-lucide="x"></i></button></header>
+  <div class="room-detail-photos">{% for photo in detail.photos %}<figure><img src="{{ photo.src }}" alt="{{ photo.name }}" loading="lazy"><figcaption>{{ photo.name }}</figcaption></figure>{% endfor %}</div>
+  <dl class="room-detail-facts"><div><dt><i data-lucide="users" aria-hidden="true"></i>Maximum occupancy</dt><dd>{{ detail.facts.capacity if detail.facts and detail.facts.capacity else 'Confirm with Dirk' }}</dd></div><div><dt><i data-lucide="ruler" aria-hidden="true"></i>Approximate area</dt><dd>{{ detail.facts.size ~ ' sq m' if detail.facts and detail.facts.size else 'Confirm with Dirk' }}</dd></div></dl>
+  <h3>Location &amp; layout</h3><p>{{ detail.facts.detail if detail.facts else 'This photograph is not matched to a confirmed room category. Ask Dirk to confirm the room type, layout and occupancy for your party.' }}</p>
+  {% if detail.facts and detail.facts.amenities %}<h3>In your room</h3><ul class="room-detail-amenities">{% for amenity in detail.facts.amenities %}<li>{{ amenity }}</li>{% endfor %}</ul>{% endif %}
+  {% if detail.facts and detail.facts.name != detail.name %}<p class="room-detail-note">Factsheet category: {{ detail.facts.name }}. Confirm the exact location and category in your quote.</p>{% endif %}
+  <h3>Room floor plan</h3>{% if detail.plans %}<div class="room-detail-plans">{% for plan in detail.plans %}<figure><img src="{{ plan.src }}" alt="{{ plan.name }}" loading="lazy"><figcaption>{{ plan.name }}. {{ plan.note }}</figcaption></figure>{% endfor %}</div>{% else %}<p>A verified floor plan for this room type is not currently available on the website. Ask Dirk for the current layout.</p>{% endif %}
+  <p class="room-detail-note">Supplier photographs and factsheet details may change. Child ages, extra beds and room availability must be confirmed in your written quote.</p>
+  <a class="button" href="{{ url_for('public.contact',resort=resort.name,message='Please check the ' ~ detail.name ~ ' at ' ~ resort.name ~ ' for my holiday.') }}">Ask Dirk about this room <i data-lucide="arrow-right"></i></a>
+</dialog>
+{% endfor %}

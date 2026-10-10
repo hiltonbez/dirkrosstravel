@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Home Layout Options{% endblock %}
+{% block seo %}<meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="{{ url_for('static', filename='home-start-options.css') }}">{% endblock %}
+{% macro choices() %}
+{% for endpoint, icon, title, copy in [
+  ('public.resort_finder', 'bed-double', 'Find My Resort', 'A shortlist shaped around you'),
+  ('public.compare', 'scale', 'Compare Resorts', 'See the differences that matter'),
+  ('public.contact', 'messages-square', 'Ask Dirk', 'Get personal travel advice')
+] %}
+<a href="{{ url_for(endpoint) }}"><i data-lucide="{{ icon }}"></i><div><h3>{{ title }}</h3><p>{{ copy }}</p></div><i data-lucide="arrow-right"></i></a>
+{% endfor %}
+{% endmacro %}
+{% block content %}
+<div class="container start-options">
+  <h1>Home Layout Options</h1>
+  <section id="columns" class="option-example">
+    <h2 class="option-label">1. Three Equal Columns</h2>
+    <div class="start-option option-columns">
+      <h2><i data-lucide="compass"></i>Where Would You Like To Start?</h2>
+      <div class="option-paths">{{ choices() }}</div>
+    </div>
+  </section>
+  <section id="rows" class="option-example">
+    <h2 class="option-label">2. Three Balanced Rows</h2>
+    <div class="start-option option-rows">
+      <h2><i data-lucide="compass"></i>Where Would You Like To Start?</h2>
+      <div class="option-paths">{{ choices() }}</div>
+    </div>
+  </section>
+  <section id="centred" class="option-example">
+    <h2 class="option-label">3. Centred Icons And Headings</h2>
+    <div class="start-option option-centred">
+      <h2><i data-lucide="compass"></i>Where Would You Like To Start?</h2>
+      <div class="option-paths">{{ choices() }}</div>
+    </div>
+  </section>
+</div>
+{% endblock %}

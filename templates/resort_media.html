@@ -1,0 +1,11 @@
+{% macro gallery(items, label) %}
+{% if items %}<div class="resort-photo-grid" aria-label="{{ label }}">
+{% for photo in items %}<figure><a href="{{ photo.src }}" class="resort-photo-link {{ 'resort-plan-link' if photo.category in ('plan','map') else '' }}" data-resort-photo data-caption="{{ photo.name }}" data-note="{{ photo.note }}" aria-label="Enlarge {{ photo.name }}">
+<img src="{{ photo.src }}" alt="{{ photo.name }}" loading="lazy" decoding="async" width="600" height="400">
+</a>
+<figcaption>{{ photo.name }}{% if photo.category in ('plan','map') %}<small>{{ photo.note }}</small>{% endif %}</figcaption></figure>{% endfor %}
+</div>{% endif %}
+{% endmacro %}
+{% macro room_slide(photo, index, resort) %}
+<figure><button class="room-photo-button" type="button" data-room-detail="room-detail-{{ index }}" aria-haspopup="dialog" aria-label="View {{ photo.name }} room details"><img src="{{ photo.src }}" alt="{{ photo.name }}" width="600" height="400" loading="lazy" decoding="async"></button><figcaption><h3><button class="room-name-button" type="button" data-room-detail="room-detail-{{ index }}" aria-haspopup="dialog">{{ photo.name }}</button></h3><p>{{ photo.room or resort.name }}</p></figcaption></figure>
+{% endmacro %}

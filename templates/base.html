@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block document_title %}{% block title %}Mauritius Holiday Packages{% endblock %} | Dirk Ross{% endblock %}</title>
+  <meta name="description" content="{% block description %}Explore Mauritius resorts and plan your holiday with Dirk Ross, Flight Centre Independent.{% endblock %}">
+  {% block seo %}<link rel="canonical" href="{{ request.base_url }}">{% endblock %}
+  <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/dirk-ross-logo.jpg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='customer-confidence.css') }}">
+  <script defer src="{{ url_for('static', filename='vendor/lucide.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='planning.js') }}"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+  <a href="{{ url_for('public.home') }}" class="logo"><img src="{{ url_for('static', filename='images/dirk-ross-logo.jpg') }}" alt="Flight Centre Independent, Dirk Ross" width="240" height="82"></a>
+  <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" title="Open menu"><i data-lucide="menu"></i></button>
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <a href="{{ url_for('public.packages') }}">Packages</a><a href="{{ url_for('public.resort_finder') }}">Find My Resort</a>
+    <a href="{{ url_for('public.compare') }}">Compare</a><a href="{{ url_for('public.guides') }}">Mauritius Guide</a>
+    {% if published_about %}<a href="{{ url_for('public.page', slug='about') }}">About Dirk</a>{% endif %}
+    <a class="button button-small" href="{{ url_for('public.contact') }}">Get My Quote <i data-lucide="arrow-right"></i></a>
+  </nav>
+</div></header>
+<div class="container flashes" role="status">{% for category, message in get_flashed_messages(with_categories=true) %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="site-footer"><div class="container footer-grid">
+  <div><strong>{{ site.get('brand_name', 'Mauritius Holiday Packages') }}</strong><p>Dirk Ross · Flight Centre Independent powered by Flight Centre Independent.</p><p>Beachcomber resorts and packages in Mauritius.</p></div>
+  <div><a href="{{ url_for('public.contact') }}">Contact Dirk</a><a href="{{ url_for('public.resorts') }}">Explore resorts</a><a href="{{ url_for('public.guides') }}">Mauritius planning guides</a>{% for page in published_pages %}<a href="{{ url_for('public.page',slug=page.slug) }}">{{ 'About Dirk' if page.slug == 'about' else page.title }}</a>{% endfor %}</div>
+  <div><a href="https://help.flightcentre.co.za/s/article/booking-terms-and-conditions-za" target="_blank" rel="noopener noreferrer">Flight Centre booking terms &amp; conditions</a><a href="https://help.flightcentre.co.za/s/article/terms-of-use-za" target="_blank" rel="noopener noreferrer">Flight Centre website terms of use</a><a href="{{ url_for('admin.dashboard') }}">Admin sign-in</a><span>© {{ current_year }} Dirk Ross</span></div>
+</div><div class="container"><p>Independent specialist. Not owned by Beachcomber Resorts &amp; Hotels. Live prices are supplied by Beachcomber’s booking engine.</p></div></footer>
+{% if site.get('whatsapp_number') %}<a class="whatsapp-link" href="https://wa.me/{{ site.whatsapp_number }}" target="_blank" rel="noopener" aria-label="Contact Dirk on WhatsApp" title="Contact Dirk on WhatsApp"><i data-lucide="message-circle"></i></a>{% endif %}
+</body></html>
