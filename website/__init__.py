@@ -50,6 +50,8 @@ def create_app(config=None):
     from .seasonal_offers import SeasonalOffers
     app.extensions['seasonal_offers'] = SeasonalOffers()
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
     Migrate(app, db)
     login.init_app(app)
     login.login_view = 'admin.login_view'
