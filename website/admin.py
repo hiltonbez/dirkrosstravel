@@ -363,7 +363,12 @@ def sync():
     try:
         summary = sync_catalogue(current_app.extensions['beachcomber'])
         flash(summary, 'success')
-    except (SupplierError, ValueError, TypeError, KeyError, SQLAlchemyError):
+    except (SupplierError, ValueError, TypeError, KeyError, SQLAlchemyError) as exc:
         db.session.rollback()
+        current_app.logger.warning('Supplier refresh failed: %s', exc)
         flash('Supplier refresh failed. Existing content has been kept. Check credentials and try again.', 'error')
+    except Exception:
+        db.session.rollback()
+        current_app.logger.exception('Unexpected supplier refresh failure')
+        flash('Supplier refresh failed unexpectedly. Existing content has been kept.', 'error')
     return redirect(url_for('admin.dashboard'))

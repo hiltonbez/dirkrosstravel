@@ -1,9 +1,12 @@
+import logging
 import threading
 import time
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import requests
+
+logger = logging.getLogger(__name__)
 
 HOTEL_CODES = {'PAR', 'DIN', 'TAB', 'RP', 'SHA', 'VIC', 'CAN', 'MAU'}
 CITIES = ('JOHANNESBURG', 'CAPE TOWN', 'DURBAN', 'PORT ELIZABETH', 'EAST LONDON', 'BLOEMFONTEIN')
@@ -38,13 +41,19 @@ class BeachcomberClient:
             )
         except requests.RequestException as exc:
             # Do not expose credentials, tokens, raw payloads, or TLS internals to visitors.
+            logger.warning('Beachcomber request %s could not reach supplier: %s', path, type(exc).__name__)
             raise SupplierError('Beachcomber could not be reached. Please try again or send an enquiry.') from exc
         try:
             data = response.json()
         except ValueError as exc:
+            logger.warning('Beachcomber request %s returned non-JSON HTTP %s', path, response.status_code)
             raise SupplierError('Beachcomber returned an unreadable response. Please try again.') from exc
         if not response.ok or (isinstance(data, dict) and data.get('errorMsg')):
+            error_message = data.get('errorMsg') if isinstance(data, dict) else None
+            logger.warning('Beachcomber request %s failed: HTTP %s%s', path, response.status_code,
+                           f' ({str(error_message)[:240]})' if error_message else '')
             raise SupplierError('Beachcomber could not complete this search. Please adjust your dates or contact Dirk.')
+        logger.info('Beachcomber request %s succeeded: HTTP %s', path, response.status_code)
         return data
 
     def token(self):
