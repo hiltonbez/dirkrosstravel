@@ -16,7 +16,16 @@ def sync_catalogue(client):
     timestamp = client.post('/getLastRatesUpdate')
     if not isinstance(timestamp, dict) or not timestamp.get('lastRatesUpdate'):
         raise ValueError('Unexpected supplier rates timestamp.')
-    products = client.post('/getProducts')
+    catalogue_warning = None
+    try:
+        products = client.post('/getProducts')
+    except SupplierError as exc:
+        # Some supplier accounts can quote live but are not enabled for the
+        # optional product catalogue endpoint. Rates can still be imported.
+        if getattr(exc, 'code', None) != 'supplier_rejected':
+            raise
+        products = []
+        catalogue_warning = 'Beachcomber product catalogue was unavailable; live rates were refreshed without catalogue updates.'
     previous = db.session.get(Setting, 'last_rates_update')
     rates = None
     if not previous or previous.value != timestamp.get('lastRatesUpdate'):
@@ -63,7 +72,8 @@ def sync_catalogue(client):
     checked.value = datetime.now(timezone.utc).isoformat()
     db.session.add(checked)
     db.session.commit()
-    return f'Resort content refreshed. {count} specials refreshed; new specials are drafts for your review.'
+    summary = f'Resort content refreshed. {count} specials refreshed; new specials are drafts for your review.'
+    return f'{summary} {catalogue_warning}' if catalogue_warning else summary
 
 
 def current_rate_price(package):

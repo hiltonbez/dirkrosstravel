@@ -1,11 +1,14 @@
 """Public, fixed-party quote summaries; never cache customer details or agent tokens."""
 import math
+import logging
 import threading
 import time
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from .beachcomber import SupplierError
+
+logger = logging.getLogger(__name__)
 
 CALENDAR_SOURCE = 'https://www.gov.za/about-sa/school-calendar'
 # Representative departures within the verified public-school breaks, not school-specific calendars.
@@ -56,9 +59,9 @@ def positive_price(value):
 def summarise(result, offer=None):
     if offer and (str(result.get('travelFromDate', ''))[:10] != offer['departure']
                   or str(result.get('travelToDate', ''))[:10] != offer['returning']):
-        return dict(status='unavailable', message='Supplier dates need confirmation. Ask Dirk to check this holiday.')
+        return dict(status='unavailable', message='The supplier returned different dates. Ask Dirk to check this holiday.')
     if result.get('includeAir') not in (True, 'true', 'True') or not result.get('airGDS'):
-        return dict(status='unavailable', message='No flight-inclusive price returned. Ask Dirk to check these dates.')
+        return dict(status='unavailable', message='The supplier returned no flight-inclusive price for these dates. Ask Dirk to check them.')
     options = []
     for room in result.get('roomOptions', []):
         if str(room.get('numberOfNights')) != '7':
@@ -74,7 +77,7 @@ def summarise(result, offer=None):
             options.append(dict(total=total, person=person, room=str(room.get('accomProductName', 'Room option')),
                                 meal=str(package.get('packageDesc', 'Confirm meal plan')), availability=status))
     if not options:
-        return dict(status='unavailable', message='No suitable priced room returned. Ask Dirk to check alternatives.')
+        return dict(status='unavailable', message='The supplier returned no suitable priced 7-night room. Ask Dirk to check alternatives.')
     transfers = result.get('includeTransfers')
     transfer_included = True if transfers in (True, 'true', 'True') else False if transfers in (False, 'false', 'False') else None
     carriers = sorted({str(flight['carrier']) for flight in result.get('airGDS', []) if flight.get('carrier')})
@@ -98,7 +101,9 @@ class SeasonalOffers:
                 return dict(cached[1])
             try:
                 result = summarise(client.quote(search_values(code, offer)), offer)
-            except SupplierError:
+            except SupplierError as exc:
+                logger.warning('Seasonal quote unavailable: code=%s status=%s trace_id=%s',
+                               exc.code, exc.status, exc.trace_id)
                 result = dict(status='unavailable', message='Live pricing is temporarily unavailable. Ask Dirk for a quote.')
             result['checked'] = datetime.now(ZoneInfo('Africa/Johannesburg')).strftime('%d %b %Y, %H:%M SAST')
             ttl = 1800 if result['status'] == 'priced' else 120
