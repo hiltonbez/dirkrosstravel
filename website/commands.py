@@ -43,6 +43,25 @@ def register_commands(app):
         db.session.commit()
         click.echo('Administrator created. Sign in at /admin/login.')
 
+    @app.cli.command('reset-admin')
+    @click.option('--email', prompt=True)
+    @click.password_option(prompt='New admin password', confirmation_prompt=True)
+    def reset_admin(email, password):
+        """Create or reset an administrator without exposing the password."""
+        email = email.strip().lower()
+        if not re.fullmatch(r'[^\s@]+@[^\s@]+\.[^\s@]+', email) or len(email) > 254:
+            raise click.ClickException('Please use a valid email address.')
+        if len(password) < 12:
+            raise click.ClickException('Use an admin password of at least 12 characters.')
+        user = db.session.execute(db.select(User).where(User.email == email)).scalar_one_or_none()
+        created = user is None
+        if created:
+            user = User(email=email)
+            db.session.add(user)
+        user.set_password(password)
+        db.session.commit()
+        click.echo('Administrator created.' if created else 'Administrator password updated.')
+
     @app.cli.command('sync-supplier')
     def sync_supplier():
         """Refresh supplier content and daily specials; new specials are drafts."""
