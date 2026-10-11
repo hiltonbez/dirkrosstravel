@@ -1,5 +1,8 @@
 import threading
 import time
+import json
+import logging
+import uuid
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
@@ -10,7 +13,21 @@ CITIES = ('JOHANNESBURG', 'CAPE TOWN', 'DURBAN', 'PORT ELIZABETH', 'EAST LONDON'
 
 
 class SupplierError(Exception):
-    pass
+    def __init__(self, message, code='supplier_error', status=None, trace_id=None):
+        super().__init__(message)
+        self.code, self.status, self.trace_id = code, status, trace_id
+
+
+logger = logging.getLogger(__name__)
+
+
+def api_event(endpoint, trace_id, started, outcome, status=None):
+    # Never log payloads, headers, response bodies, credentials or exception text.
+    logger.log(logging.INFO if outcome == 'ok' else logging.WARNING, json.dumps(dict(
+        event='beachcomber_api', endpoint=endpoint if endpoint in
+        ('/getToken', '/getQuote', '/getProducts', '/getLastRatesUpdate', '/getRates') else 'other',
+        trace_id=trace_id, outcome=outcome, http_status=status if isinstance(status, int) else None,
+        elapsed_ms=round((time.monotonic() - started) * 1000))))
 
 
 class BeachcomberClient:
@@ -28,8 +45,10 @@ class BeachcomberClient:
         return bool(self.key and self.username and self.password)
 
     def post(self, path, payload=None, auth=None):
+        started, trace_id = time.monotonic(), uuid.uuid4().hex
         if not self.key:
-            raise SupplierError('Live pricing is not connected yet. Please send Dirk an enquiry.')
+            api_event(path, trace_id, started, 'missing_configuration')
+            raise SupplierError('Live pricing is not connected yet. Please send Dirk an enquiry.', 'missing_configuration', trace_id=trace_id)
         try:
             response = self.transport.post(
                 self.BASE_URL + path, json=payload if payload is not None else {},
@@ -37,25 +56,38 @@ class BeachcomberClient:
                 auth=auth, timeout=(10, 70),
             )
         except requests.RequestException as exc:
+            code = ('tls_error' if isinstance(exc, requests.exceptions.SSLError) else
+                    'connect_timeout' if isinstance(exc, requests.ConnectTimeout) else
+                    'read_timeout' if isinstance(exc, requests.ReadTimeout) else
+                    'timeout' if isinstance(exc, requests.Timeout) else 'connection_error')
+            api_event(path, trace_id, started, code)
             # Do not expose credentials, tokens, raw payloads, or TLS internals to visitors.
-            raise SupplierError('Beachcomber could not be reached. Please try again or send an enquiry.') from exc
+            raise SupplierError('Beachcomber could not be reached. Please try again or send an enquiry.', code, trace_id=trace_id) from exc
+        status = response.status_code if isinstance(response.status_code, int) else None
+        if not response.ok:
+            code = 'authentication_rejected' if status in (401, 403) else 'rate_limited' if status == 429 else 'http_error'
+            api_event(path, trace_id, started, code, status)
+            raise SupplierError('Beachcomber could not complete this search. Please adjust your dates or contact Dirk.', code, status, trace_id)
         try:
             data = response.json()
         except ValueError as exc:
-            raise SupplierError('Beachcomber returned an unreadable response. Please try again.') from exc
+            api_event(path, trace_id, started, 'invalid_json', status)
+            raise SupplierError('Beachcomber returned an unreadable response. Please try again.', 'invalid_json', status, trace_id) from exc
         if not response.ok or (isinstance(data, dict) and data.get('errorMsg')):
-            raise SupplierError('Beachcomber could not complete this search. Please adjust your dates or contact Dirk.')
+            api_event(path, trace_id, started, 'supplier_rejected', status)
+            raise SupplierError('Beachcomber could not complete this search. Please adjust your dates or contact Dirk.', 'supplier_rejected', status, trace_id)
+        api_event(path, trace_id, started, 'ok', status)
         return data
 
     def token(self):
         if not self.configured:
-            raise SupplierError('Live pricing is not connected yet. Please send Dirk an enquiry.')
+            raise SupplierError('Live pricing is not connected yet. Please send Dirk an enquiry.', 'missing_configuration')
         with self._lock:
             if self._token and time.monotonic() < self._token_until:
                 return self._token
             result = self.post('/getToken', auth=(self.username, self.password))
             if not isinstance(result, dict) or not result.get('userToken'):
-                raise SupplierError('Agent authentication did not return a valid token.')
+                raise SupplierError('Agent authentication did not return a valid token.', 'invalid_token_response')
             expires = result.get('expires')
             try:
                 expiry = datetime.fromisoformat(expires.replace('Z', '+00:00'))
@@ -63,9 +95,9 @@ class BeachcomberClient:
                     expiry = expiry.replace(tzinfo=ZoneInfo('Africa/Johannesburg'))
                 seconds = (expiry - datetime.now(expiry.tzinfo)).total_seconds()
             except (ValueError, TypeError, AttributeError):
-                raise SupplierError('Agent authentication returned an invalid expiry.')
+                raise SupplierError('Agent authentication returned an invalid expiry.', 'invalid_token_expiry')
             if seconds <= 60:
-                raise SupplierError('Agent authentication returned an expired token.')
+                raise SupplierError('Agent authentication returned an expired token.', 'expired_token')
             self._token, self._token_until = result['userToken'], time.monotonic() + min(seconds - 60, 43140)
             return self._token
 

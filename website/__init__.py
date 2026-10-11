@@ -47,6 +47,11 @@ def create_app(config=None):
                       PERMANENT_SESSION_LIFETIME=timedelta(hours=8), WTF_CSRF_TIME_LIMIT=28800)
     if config:
         app.config.update(config)
+    import logging
+    logging.getLogger('website.beachcomber').setLevel(logging.INFO)
+    app.logger.warning('Beachcomber configuration presence: %s', {
+        name: bool(os.getenv(name, '').strip()) for name in
+        ('BEACHCOMBER_API_KEY', 'BEACHCOMBER_USERNAME', 'BEACHCOMBER_PASSWORD')})
     from .seasonal_offers import SeasonalOffers
     app.extensions['seasonal_offers'] = SeasonalOffers()
     db.init_app(app)
